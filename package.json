@@ -1,0 +1,35 @@
+{
+  "name": "test_rest_api",
+  "version": "1.0.0",
+  "description": "Test Rest API",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "tsc",
+    "test": "cd dist && node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reactivesw/test_rest_api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reactivesw/test_rest_api/issues"
+  },
+  "homepage": "https://github.com/reactivesw/test_rest_api#readme",
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.33",
+    "@types/request-promise": "^4.1.33",
+    "@types/uuid": "^2.0.29",
+    "typescript": "^2.1.4"
+  },
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "mochawesome": "^1.5.4",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "uuid": "^3.0.1"
+  }
+}
