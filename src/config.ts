@@ -6,13 +6,3 @@ export const ENV_PROJECT_KEY_NAME = 'CTP_PROJECT_KEY'
 export const CTP_BASEURL = 'https://api.sphere.io/'
 
 export const NEED_ACCESS_TOKEN = true
-
-export const isExpectedProperties = function (property) {
-  switch(property) {
-    case 'id':
-    case 'createdAt':
-    case 'lastModifiedAt':
-    case 'orderHint': return true
-    default: return false
-  }
-}

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "tsc",
-    "test": "cd dist && node main.js"
+    "test": "cd dist && node --trace-deprecation main.js"
   },
   "repository": {
     "type": "git",
@@ -18,18 +18,17 @@
   },
   "homepage": "https://github.com/reactivesw/test_rest_api#readme",
   "devDependencies": {
+    "@types/axios": "^0.9.34",
     "@types/chai": "^3.4.34",
     "@types/mocha": "^2.2.33",
-    "@types/request-promise": "^4.1.33",
     "@types/uuid": "^2.0.29",
     "typescript": "^2.1.4"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
     "mochawesome": "^1.5.4",
-    "request": "^2.79.0",
-    "request-promise": "^4.1.1",
     "uuid": "^3.0.1"
   }
 }

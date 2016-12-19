@@ -1,5 +1,5 @@
 import { TestCase, TestSuite }  from '../models'
-import callApi from './callRestApi'
+import callApi from './call_api'
 
 export default async function (testCase: TestCase, testSuite: TestSuite) {
   if (!testCase.url) {

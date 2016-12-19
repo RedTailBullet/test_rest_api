@@ -7,6 +7,7 @@ export interface TestCase {
   payload?: any
   qs?: string
   result?: any
+  params?: {[prop: string]: string|number|boolean}
   config?: (this: TestCase, testSuite: TestSuite) => void
 }
 
@@ -18,4 +19,5 @@ export interface TestSuite {
   testCases: TestCase[]
   cleanups?: any
   setups?: TestCase[]
+  url?: string
 }
