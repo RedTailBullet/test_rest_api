@@ -7,9 +7,15 @@ export interface RequestData {
   params?: {[prop: string]: string|number|boolean}
 }
 
+export interface EntityProps {
+  'id': string,
+  'version': number,
+  [prop: string]: any
+}
+
 export interface HttpResult {
   httpCode: number
-  data?: any 
+  data?: EntityProps 
 }
 
 export interface TestBase {
@@ -17,12 +23,15 @@ export interface TestBase {
   requestData: RequestData
 
   // an optional config function that takes an array of setups 
-  config?: (sources?: CaseSetup[]) => void
+  config?: (setups?: CaseSetup[]) => void
   result?: HttpResult
   expectedResult?: HttpResult
 }
 
 export interface CaseSetup extends TestBase {
+}
+
+export interface Cleanup extends TestBase {
 }
 
 /**
@@ -35,8 +44,8 @@ export interface TestCase extends TestBase {
 
 export interface TestSuite {
   description: string
-  setupMethod: HttpMethod
-  testCaseMethod: HttpMethod
-  suiteUrl: string
+  suiteUrl?: string   // set at runtime
   testCases: TestCase[]
+  setupMethod: HttpMethod   // must set method at suite level
+  testCaseMethod: HttpMethod  // must set method at suite level
 }

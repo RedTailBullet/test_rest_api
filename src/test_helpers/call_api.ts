@@ -1,25 +1,21 @@
 import * as request from 'axios'
-import { TestCase } from '../models'
+import { RequestData } from '../models'
 import * as config from '../config'
 
-async function callApi(testCase: TestCase): Promise<Axios.AxiosXHR<string>> {
+async function callApi(requestData: RequestData): Promise<Axios.AxiosXHR<string>> {
   let options: Axios.AxiosXHRConfig<string> = {
-    url: testCase.url as string,
+    url: requestData.url as string,
     headers: { 'Content-Type': 'application/json' }
   }
 
-  if (testCase.payload) {
-    options.data = testCase.payload
+  if (requestData.payload) {
+    options.data = requestData.payload
   }
 
-  if (!testCase.method) {
-    testCase.method = 'get'
-  }
+  options.method = requestData.method
 
-  options.method = testCase.method
-
-  if (testCase.params) {
-    options.params = testCase.params
+  if (requestData.params) {
+    options.params = requestData.params
   }
 
   return request(options)

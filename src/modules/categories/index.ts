@@ -1,5 +1,5 @@
 import runSuite from '../../test_helpers/run_suite'
-import functionForCreate from './function_for_create/suite'
+import functionForCreate from './create/normal'
 
 const apiName = 'categories'
 export default function() {
