@@ -40,14 +40,11 @@ function execTestSuite(testSuite: TestSuite) {
   testSuite.testCases.forEach(testCase => {
     let result = testCase.result
     it(testCase.description, async function () {
-      try {
-        let resp = await runCase(testCase, testSuite)
-        testCase.result.actualData = resp.data
-        expect(resp.status).to.equal(result.expectedHttpCode)
-        expect(compare(resp.data, result.actualData)).to.be.true
-      } catch (error) {
-        reportError(error)
-      }
+      let resp = await runCase(testCase, testSuite)
+      testCase.result.actualData = resp.data
+      
+      expect(resp.status).to.equal(result.expectedHttpCode)
+      expect(compare(resp.data, result.actualData)).to.be.true
     })
   })
 }

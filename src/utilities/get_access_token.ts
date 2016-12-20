@@ -1,6 +1,7 @@
 import * as request from 'axios'
 import * as uuid from 'uuid'
 import * as config from '../config'
+import reportError from '../utilities/report_error'
 
 const client_id = process.env[config.ENV_CLIENT_ID_NAME]
 const client_secret = process.env[config.ENV_CLIENT_SECRET_NAME]
@@ -14,9 +15,11 @@ export default async function () {
   const options = setOptions()
   try {
     const resp = await request(options)
-    return resp.data['access_token']
+    const accessToken = resp.data['access_token']
+    return accessToken
   } catch (err) {
-    console.log(`Exception in GetAccessToken: ${err}`)
+    console.log('Exception in GetAccessToken, please check your CTP configurations.')
+    reportError(err)
     process.exit(-1)
   }
 }
