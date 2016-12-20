@@ -29,10 +29,22 @@ export default async function (apiName: string, testSuite: TestSuite) {
   })
 }
 
+// should set case url, setup url, and their methods
 function setupCaseRequest(testCase: TestCase, testSuite: TestSuite) {
   if (!testCase.requestData.url) {
     testCase.requestData.url = testSuite.suiteUrl
   }
+   if (testCase.setups) {
+      testCase.setups.forEach(setup => {
+        if (!setup.requestData.url) {
+          setup.requestData.url = testSuite.suiteUrl
+        }
+        if (!setup.requestData.method) {
+          setup.requestData.method = testSuite.setupMethod
+        }
+      })
+    }
+
   if (!testCase.requestData.method) {
     testCase.requestData.method = testSuite.testCaseMethod
   }
