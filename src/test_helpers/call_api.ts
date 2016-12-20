@@ -2,7 +2,7 @@ import * as request from 'axios'
 import { TestCase } from '../models'
 import * as config from '../config'
 
-async function runTestSuit(testCase: TestCase): Promise<Axios.AxiosXHR<string>> {
+async function callApi(testCase: TestCase): Promise<Axios.AxiosXHR<string>> {
   let options: Axios.AxiosXHRConfig<string> = {
     url: testCase.url as string,
     headers: { 'Content-Type': 'application/json' }
@@ -25,4 +25,4 @@ async function runTestSuit(testCase: TestCase): Promise<Axios.AxiosXHR<string>> 
   return request(options)
 }
 
-export default runTestSuit
+export default callApi

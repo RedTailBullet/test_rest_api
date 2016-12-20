@@ -6,7 +6,7 @@ import cleanSuite from './clean_suite'
 import runCase from './run_case'
 import * as config from '../config'
 import { TestSuite } from '../models'
-import reportError from './report_error'
+import reportError from '../utilities/report_error'
 
 import compare from './compare_results'
 
@@ -23,7 +23,7 @@ export default async function (apiName: string, testSuite: TestSuite) {
         }
       })
 
-      execTestSuite(testSuite)
+      execCases(testSuite)
 
       after(async function () {
         if (testSuite.cleanups) {
@@ -36,12 +36,12 @@ export default async function (apiName: string, testSuite: TestSuite) {
   })
 }
 
-function execTestSuite(testSuite: TestSuite) {
+function execCases(testSuite: TestSuite) {
   testSuite.testCases.forEach(testCase => {
-    let result = testCase.result
     it(testCase.description, async function () {
+      let result = testCase.result
       let resp = await runCase(testCase, testSuite)
-      testCase.result.actualData = resp.data
+      result.actualData = resp.data
       
       expect(resp.status).to.equal(result.expectedHttpCode)
       expect(compare(resp.data, result.actualData)).to.be.true

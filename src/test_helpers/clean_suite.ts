@@ -2,7 +2,7 @@ import callAPI from './call_api'
 import runCase from './run_case'
 import { TestSuite } from '../models'
 
-import reportError from './report_error'
+import reportError from '../utilities/report_error'
 
 export default async function (testSuite: TestSuite) {
   const cleanups = testSuite.cleanups
