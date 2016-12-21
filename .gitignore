@@ -65,3 +65,6 @@ jspm_packages
 
 # vscode project meta file
 .vscode
+
+# test report directories
+test_report
