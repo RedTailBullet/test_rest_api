@@ -15,7 +15,6 @@ export default async function (apiName: string, testSuite: TestSuite) {
       testSuite.testCases.forEach(testCase => {
         setupCaseRequest(testCase, testSuite)
         it(testCase.description, function () {
-          console.log(`about to run case at: ${Date.now().toLocaleString()}`)
           return runCase(testCase)
         })
       })

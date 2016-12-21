@@ -1,9 +1,12 @@
-function isSizeMatch (objectA, objectB) {
+import * as chai from 'chai'
+let expect = chai.expect
+
+function isSizeMatch(objectA, objectB) {
   return Object.keys(objectA).length === Object.keys(objectB).length
 }
 
-function isIgnoredProperties (property) {
-  switch(property) {
+function isIgnoredProperties(property) {
+  switch (property) {
     case 'id':
     case 'createdAt':
     case 'lastModifiedAt':
@@ -13,36 +16,23 @@ function isIgnoredProperties (property) {
 }
 
 // should re-write this using Chai help methods
-function compare (ExpectedResults, ActualResults) {
+function compare(description: string, ExpectedResults, ActualResults) {
 
-  // let expectedProperties = Object.keys(ExpectedResults)
-  // if (typeof ActualResults === 'undefined' && typeof ExpectedResults === 'undefined') {
-  //   return true
-  // } else if (typeof ActualResults === 'undefined') {
-  //   return false
-  // } 
-  // else if (!isSizeMatch(ExpectedResults, ActualResults)) {
-  //   return false
-  // }
+  let errorMsg = description
+  expect(isSizeMatch(ExpectedResults, ActualResults), `${errorMsg} -> size doesn't match`).to.be.true
 
-  // // compare properties
-  // let matched = true
-  // for (let prop of expectedProperties) {
-  //   if (typeof ExpectedResults[prop] === 'object') {
-  //       if (! compare(ExpectedResults[prop], ActualResults[prop])) {
-  //         matched = false
-  //         break
-  //       }
-  //   } else if (isIgnoredProperties(prop)) {
-  //     continue
-  //   } else if (ExpectedResults[prop] !== ActualResults[prop]) {
-  //     matched = false
-  //     break
-  //   }
-  // }
-  
-  // rewrite this when completed 
-  return true // matched
+  // compare properties
+  let matched = true
+  let expectedProperties = Object.keys(ExpectedResults)
+  for (let prop of expectedProperties) {
+    if (typeof ExpectedResults[prop] === 'object') {
+      compare(`${errorMsg} -> ${prop}`, ExpectedResults[prop], ActualResults[prop])
+    } else if (isIgnoredProperties(prop)) {
+      continue
+    } else {
+      expect(ExpectedResults[prop], `${errorMsg} -> ${prop} -> value doesn't match`).to.equal(ActualResults[prop])
+    }
+  }
 }
 
 export default compare

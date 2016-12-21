@@ -19,5 +19,5 @@ export default async function (testCase: TestCase) {
 function compareResult(testCase: TestCase) {
   let result = testCase.result as HttpResult
   expect(result.httpCode).to.equal((<HttpResult>testCase.expectedResult).httpCode)
-  expect(compare(result.data, (<HttpResult>testCase.expectedResult).data)).to.be.true
+  compare(testCase.description, result.data, (<HttpResult>testCase.expectedResult).data)
 }
