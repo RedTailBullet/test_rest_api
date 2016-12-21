@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "pretest": "tsc",
-    "test": "cd dist && node --trace-deprecation main.js"
+    "test": "cd dist && node main.js"
   },
   "repository": {
     "type": "git",

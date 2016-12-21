@@ -8,12 +8,13 @@ import reportError from '../utilities/report_error'
 let EMPTY_REQUEST: RequestData = {}
 
 export default async function (testCase: TestCase) {
+  let cleanups: TestBase[] = []
   const setups = testCase.setups
   if (setups) {
-    let cleanups: TestBase[] = []
     setups.forEach((setup) => createCleanups(setup, cleanups))
-    runSequentially(cleanups)
   }
+  createCleanups(testCase, cleanups)
+  return runSequentially(cleanups)
 }
 
 function createCleanups(setup: CaseSetup, cleanups: TestBase[]) {

@@ -1,7 +1,7 @@
 
 import { TestCase, HttpResult } from '../../../../../models'
-import setups from '../setups'
-
+import s1 from '../setups/s1'
+let setups = [s1]
 let commonData = {
   'name': {
     'de': 'de-smartphone_with_all_properties',

@@ -1,28 +1,23 @@
+import { expect } from 'chai'
+import compare from './compare_results'
+
 import { TestCase, HttpResult, EntityProps, CaseSetup } from '../models'
-import callApi from './call_api'
+import cleanCase from './clean_case'
 import runSeqentially from './run_sequentially'
 import runTestBase from './run_test_base'
 
 export default async function (testCase: TestCase) {
 
   if (testCase.setups) {
-    before('case setup', function () {
-      return setup(testCase)
-    })
+    await runSeqentially(testCase.setups, testCase.setups)
   }
-
-  before('run case', function() {
-    runTestBase(testCase)
-  })
+  await runTestBase(testCase)
+  await cleanCase(testCase)
+  compareResult(testCase)
 }
 
-// setup must run sequentially 
-function setup(testCase: TestCase) {
-  // use the reduce pattern to call test cases sequentially
-  let setups = testCase.setups
-  if (setups) {
-    return runSeqentially(setups, setups)
-  }
-
-  return Promise.resolve()
+function compareResult(testCase: TestCase) {
+  let result = testCase.result as HttpResult
+  expect(result.httpCode).to.equal((<HttpResult>testCase.expectedResult).httpCode)
+  expect(compare(result.data, (<HttpResult>testCase.expectedResult).data)).to.be.true
 }

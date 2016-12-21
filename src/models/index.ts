@@ -31,9 +31,6 @@ export interface TestBase {
 export interface CaseSetup extends TestBase {
 }
 
-export interface Cleanup extends TestBase {
-}
-
 /**
  * A test case may have setups and cleanups. 
  */
