@@ -1,33 +1,32 @@
 import callAPI from './call_api'
 import runSequentially from './run_sequentially'
 
-import { TestBase, TestCase, CaseSetup, RequestData, HttpResult } from '../models'
+import { Cleanup, TestCase, TestBase, RequestData } from '../models'
 
 import reportError from '../utilities/report_error'
 
 let EMPTY_REQUEST: RequestData = {}
 
 export default async function (testCase: TestCase) {
-  let cleanups: TestBase[] = []
+  let cleanups: Cleanup[] = []
   const setups = testCase.setups
   if (setups) {
     setups.forEach((setup) => createCleanups(setup, cleanups))
   }
+  
   createCleanups(testCase, cleanups)
   return runSequentially(cleanups)
 }
 
-function createCleanups(setup: CaseSetup, cleanups: TestBase[]) {
-  let requestData = setRequest(setup)
+// we covert CaseSetup and TestCase to Cleanup so not save result on API call
+function createCleanups(testBase: TestBase, cleanups: Cleanup[]) {
+  let requestData = setRequest(testBase)
   if (requestData === EMPTY_REQUEST) {
-    const err = new Error(`Empty result in Setup: ${setup.description}`)
+    const err = new Error(`Empty result in Setup: ${testBase.description}`)
     reportError(err)
   } else {
     try {
-      let testBase: TestBase = {
-        description: "dummy",
-        requestData
-      }
+      let testBase: Cleanup = new Cleanup("dummy", requestData)
       cleanups.unshift(testBase)
     }
     catch (error) {
@@ -36,13 +35,13 @@ function createCleanups(setup: CaseSetup, cleanups: TestBase[]) {
   }
 }
 
-function setRequest(setup: CaseSetup) {
+function setRequest(testBase: TestBase) {
   let requestData: RequestData = {}
-  let result = setup.result
+  let result = testBase.result
   if (result && result.data) {
     requestData.method = 'delete'
 
-    let setupUrl = setup.requestData.url
+    let setupUrl = testBase.requestData.url
     requestData.url = `${setupUrl}/${result.data.id}`
     requestData.params = {
       version: result.data.version

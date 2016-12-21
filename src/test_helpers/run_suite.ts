@@ -2,7 +2,7 @@
 import callApi from './call_api'
 import runCase from './run_case'
 import * as config from '../config'
-import { TestCase, TestSuite, HttpResult } from '../models'
+import { TestCase, TestSuite } from '../models'
 import reportError from '../utilities/report_error'
 
 export default async function (apiName: string, testSuite: TestSuite) {

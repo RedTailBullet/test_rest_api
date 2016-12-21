@@ -19,7 +19,7 @@ let commonData = {
     'en': 'en-Smartphone is more and more popular in world',
     'de': 'de-Smartphone is more and more popular in world'
   },
-  'orderHint': '0.00031481123037113502170356',
+  'orderHint': '0.0003148112303713502170356',
   'externalId': '1234567890QWERTYUIOP',
   'metaTitle': {
     'en': 'en-smartphone',
@@ -39,21 +39,19 @@ const c: TestCase = {
   description: 'Case 2: Create category with all required properties and all optional properties',
   setups,
   config: function (this: TestCase) {
-    if (this.setups) {
-      let result = this.setups[0].result as HttpResult
-      const er = this.expectedResult as HttpResult
-      if (result.data && er.data) {
-        this.requestData.payload.parent.id = `${result.data.id}`
-        
-        er.data['parent'].id = `${result.data.id}`
-        er.data['ancestors'] = [
-          {
-            typeId: 'category',
-            id: `${result.data.id}`
-          }
-        ]
-      }
-   }
+    const result = s1.result as HttpResult
+    const expected = this.expectedResult as HttpResult
+    if (result.data && expected.data) {
+      this.requestData.payload.parent.id = `${result.data.id}`
+
+      expected.data['parent'].id = `${result.data.id}`
+      expected.data['ancestors'] = [
+        {
+          typeId: 'category',
+          id: `${result.data.id}`
+        }
+      ]
+    }
   },
   requestData: {
     payload: {
@@ -65,8 +63,8 @@ const c: TestCase = {
     data: {
       ...commonData,
       'id': '',
-      'version': 2,
-      'lastMessageSequenceNumber': 2,
+      'version': 1,
+      'lastMessageSequenceNumber': 1,
       'orderHint': '',
       'createdAt': '',
       'lastModifiedAt': ''

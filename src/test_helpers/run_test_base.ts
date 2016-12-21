@@ -1,4 +1,4 @@
-import { TestBase, CaseSetup, HttpResult } from '../models'
+import { TestBase, CaseSetup, Cleanup, HttpResult } from '../models'
 
 import callApi from './call_api'
 
@@ -9,11 +9,14 @@ export default async function (testBase: TestBase, setups?: CaseSetup[]) {
   }
 
   return callApi(testBase.requestData).then(resp => {
-    let responseData: any = resp.data
-    let result: HttpResult = {
-      data: responseData,
-      httpCode: resp.status
+    let tb = testBase // avoid IDE bug 
+    if (!(tb instanceof Cleanup)) {
+      let responseData: any = resp.data
+      let result: HttpResult = {
+        data: responseData,
+        httpCode: resp.status
+      }
+      testBase.result = result
     }
-    testBase.result = result
   })
 }

@@ -1,6 +1,6 @@
 
-import { CaseSetup } from '../../../../../models'
-let s: CaseSetup = {
+import { TestBase } from '../../../../../models'
+let s: TestBase = {
   description: 'Setup 1: Create category name smartphone with all required properties for function test',
   requestData: {
     payload: {

@@ -31,6 +31,14 @@ export interface TestBase {
 export interface CaseSetup extends TestBase {
 }
 
+// distinguish it to not save result
+export class Cleanup implements TestBase {
+  constructor(public description: string, public requestData: RequestData) {
+    this.description = description
+    this.requestData = requestData
+  }
+}
+
 /**
  * A test case may have setups and cleanups. 
  */
