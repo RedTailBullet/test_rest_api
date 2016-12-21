@@ -1,7 +1,10 @@
-import runSuite from '../../test_helpers/run_suite'
-import functionForCreate from './create/normal'
+import { ModuleSuites } from '../../models/module_suites'
+import createNormal from './create/normal'
 
-const apiName = 'categories'
-export default function() {
-  runSuite(apiName, functionForCreate)
+const ms: ModuleSuites = {
+  apiName: 'categories',
+  suites: [createNormal]
 }
+
+
+export default ms

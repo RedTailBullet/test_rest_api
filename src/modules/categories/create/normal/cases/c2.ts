@@ -65,8 +65,11 @@ const c: TestCase = {
     data: {
       ...commonData,
       'id': '',
-      'version': 1,
-      'lastMessageSequenceNumber': 1
+      'version': 2,
+      'lastMessageSequenceNumber': 2,
+      'orderHint': '',
+      'createdAt': '',
+      'lastModifiedAt': ''
     }
   }
 }

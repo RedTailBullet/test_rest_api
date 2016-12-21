@@ -1,10 +1,14 @@
 import * as axios from 'axios'
 
+import { ModuleSuites } from './models/module_suites'
 import * as config from './config'
 import getAccessToken from './utilities/get_access_token'
-import testCategories from './modules/categories'
-
 import reportError from './utilities/report_error'
+import runModule from './test_helpers/run_module'
+
+// import test modules here
+import categories from './modules/categories'
+let modules: ModuleSuites[] = [categories]
 
 before(async function () {
   if (config.NEED_ACCESS_TOKEN) {
@@ -17,10 +21,7 @@ describe('CTP API Test\n', function () {
 
   // catch all uncaught errors here
   try {
-    describe('Test Category API', function () {
-      testCategories()
-    })
-    // more module tests here
+    modules.forEach(runModule)
  }
   catch (error) {
     console.log('Uncaught error in API Test, exiting...')

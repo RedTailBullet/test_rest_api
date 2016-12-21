@@ -23,7 +23,11 @@ const c: TestCase = {
 			...testData,
 			'id': '',
 			'version': 1,
-			'ancestors': []
+			'ancestors': [],
+      'orderHint': '',
+      'createdAt': '',
+      'lastModifiedAt': '',
+      'lastMessageSequenceNumber': 1
 		}
 	}
 }
