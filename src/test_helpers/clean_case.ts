@@ -5,8 +5,6 @@ import { Cleanup, TestCase, TestBase, RequestData } from '../models'
 
 import reportError from '../utilities/report_error'
 
-let EMPTY_REQUEST: RequestData = {}
-
 export default async function (testCase: TestCase) {
   let cleanups: Cleanup[] = []
   const setups = testCase.setups
@@ -21,7 +19,7 @@ export default async function (testCase: TestCase) {
 // we covert CaseSetup and TestCase to Cleanup so not save result on API call
 function createCleanups(testBase: TestBase, cleanups: Cleanup[]) {
   let requestData = setRequest(testBase)
-  if (requestData === EMPTY_REQUEST) {
+  if (isEmptyObject(requestData)) {
     const err = new Error(`Empty result in Test Case: ${testBase.description}`)
     reportError(err)
   } else {
@@ -38,16 +36,21 @@ function createCleanups(testBase: TestBase, cleanups: Cleanup[]) {
 function setRequest(testBase: TestBase) {
   let requestData: RequestData = {}
   let result = testBase.result
-  console.log('result.data?' + result)
-  if (result && result.data) {
+  if (result && result.data && !isEmptyObject(result.data)) {
     requestData.method = 'delete'
 
     let setupUrl = testBase.requestData.url
-    console.log('setupUrl for cleanup:' + setupUrl)
     requestData.url = `${setupUrl}/${result.data.id}`
     requestData.params = {
       version: result.data.version
     }
   }
   return requestData
+}
+
+function isEmptyObject (object) {
+  if (Object.keys(object).length === 0) {
+    return true
+  }
+  return false
 }
