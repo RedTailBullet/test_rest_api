@@ -20,5 +20,9 @@ function compareResult(testCase: TestCase) {
   let result = testCase.result as HttpResult
   let expectedResult = testCase.expectedResult as HttpResult
   expect(result.httpCode).to.equal(expectedResult.httpCode)
-  compare(`${testCase.description} -> result's data`, result.data, (expectedResult.data))
+
+  let expectedData = expectedResult.data
+  if (expectedData) {
+    compare(`${testCase.description} -> result's data`, expectedData, result.data)
+  }
 }

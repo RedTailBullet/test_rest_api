@@ -12,7 +12,7 @@ function compare(description: string, ExpectedResults, ActualResults) {
     const expected = ExpectedResults[prop]
     const actual =  ActualResults[prop]
     const msg = `${errorMsg} -> ${prop}`
-
+    
     if (typeof expected === 'object') {
       compare(msg, expected, actual)
     } else if (IGNORED.indexOf(prop) !== -1) {

@@ -2,8 +2,29 @@ import * as request from 'axios'
 import { RequestData } from '../models'
 import * as config from '../config'
 
-async function callApi(requestData: RequestData): Promise<Axios.AxiosXHR<string>> {
-  let options: Axios.AxiosXHRConfig<string> = {
+/**
+ * convert HTTP response errors into normal response result 
+ */
+export default async function callApi(requestData: RequestData) {
+  const options = setOptions(requestData)
+
+  let resp
+  try {
+    resp = await request(options)
+  }
+  catch (err) {
+    if (err.response) {
+      resp = err.response
+    } 
+    else {
+      throw err
+    }
+  }
+  return resp
+}
+
+function setOptions (requestData: RequestData) {
+  const options: Axios.AxiosXHRConfig<string> = {
     url: requestData.url as string,
     headers: { 'Content-Type': 'application/json' }
   }
@@ -18,7 +39,5 @@ async function callApi(requestData: RequestData): Promise<Axios.AxiosXHR<string>
     options.params = requestData.params
   }
 
-  return request(options)
+  return options
 }
-
-export default callApi

@@ -8,15 +8,14 @@ export default async function (testBase: TestBase, setups?: CaseSetup[]) {
     testBase.config(setups)
   }
 
-  return callApi(testBase.requestData).then(resp => {
-    let tb = testBase // avoid IDE bug 
-    if (!(tb instanceof Cleanup)) {
-      let responseData: any = resp.data
-      let result: HttpResult = {
-        data: responseData,
-        httpCode: resp.status
-      }
-      testBase.result = result
+  let resp = await callApi(testBase.requestData)
+  let tb = testBase // avoid IDE bug 
+  if (!(tb instanceof Cleanup)) {
+    let responseData: any = resp.data
+    let result: HttpResult = {
+      data: responseData,
+      httpCode: resp.status
     }
-  })
+    testBase.result = result
+  }
 }

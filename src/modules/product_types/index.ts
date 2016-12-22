@@ -1,10 +1,10 @@
-import runSuite from '../../test_helpers/run_suite'
-import create from './create'
-import query from './query'
-import update from './update'
-import remove from './delete'
+import { ModuleSuites } from '../../models/module_suites'
+import createError from './create/error'
 
-const apiName = 'categories'
-export default function() {
-  // runSuites(apiName, create)
+const ms: ModuleSuites = {
+  apiName: 'product-types',
+  suites: [createError]
 }
+
+
+export default ms

@@ -8,7 +8,8 @@ import runModule from './test_helpers/run_module'
 
 // import test modules here
 import categories from './modules/categories'
-let modules: ModuleSuites[] = [categories]
+import productType from './modules/product_types'
+let modules: ModuleSuites[] = [productType]
 
 before(async function () {
   if (config.NEED_ACCESS_TOKEN) {
