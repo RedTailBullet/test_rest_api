@@ -7,7 +7,6 @@ import * as config from '../config'
  */
 export default async function callApi(requestData: RequestData) {
   const options = setOptions(requestData)
-
   let resp
   try {
     resp = await request(options)

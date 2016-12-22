@@ -7,7 +7,13 @@ import reportError from '../utilities/report_error'
 
 export default async function (apiName: string, testSuite: TestSuite) {
 
-  let defaultUrl = `${config.CTP_BASEURL}${process.env[config.ENV_PROJECT_KEY_NAME]}/${apiName}`
+  let projectName = process.env[config.ENV_PROJECT_KEY_NAME]
+  let defaultUrl
+  if (projectName) {
+    defaultUrl = `${config.CTP_BASEURL}/${projectName}/${apiName}`
+  } else {
+    defaultUrl = `${config.CTP_BASEURL}/${apiName}`
+  }
   testSuite.suiteUrl = defaultUrl
 
   describe(testSuite.description, function () {

@@ -12,8 +12,11 @@ export default async function (testCase: TestCase) {
     await runSequentially(testCase.setups, testCase.setups)
   }
   await runTestBase(testCase)
-  await cleanCase(testCase)
+  // should compare immediately after running TestCases to avoid cleanup errors
   compareResult(testCase)
+
+  // the last step
+  await cleanCase(testCase)
 }
 
 function compareResult(testCase: TestCase) {
