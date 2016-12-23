@@ -7,9 +7,9 @@ import deleteError from './delete/error'
 const ms: ModuleSuites = {
   apiName: 'product-types',
   suites: [
-    // createError,
-    // createNormal,
-    // deleteNormal,
+    createError,
+    createNormal,
+    deleteNormal,
     deleteError
   ]
 }
