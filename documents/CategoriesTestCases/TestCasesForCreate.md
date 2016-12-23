@@ -8,9 +8,9 @@ Name and slug is required. A correct category contain name and slug at least. An
   "en": "dog food"  
 } 
 ```  
+
 Name is allow duplicate. Slug is human-readable identifier usually used as deep-link URL to the related category. Allowed are alphabetic, numeric, underscore (_) and hyphen (-) characters. Maximum size is 256. Must be unique across a project! The same category can have the same slug for different languages.
-### Test setup
-1. This test runs under any situations.
+
 
 ### Test cases
 #### 1. Create category with no payload  
@@ -110,9 +110,10 @@ Expected results:
 1. should return negative response(400) 
 2. should return error message: "Slugs may only contain alphanumeric characters, underscores and hyphens and must have a length between 2 and 256 characters. They must match the pattern [a-zA-Z0-9_\\-]{2,256}."
 
-#### 7. Create category with correct field name and correct field slug
+#### 7. Create category with duplicate field 'name' and duplicate field 'slug'  
 
-Payload:
+setups:  
+1. Create category with correct field name and correct field slug  
 
 ```json 
 {
@@ -126,11 +127,6 @@ Payload:
   }
 }
 ```
-Expected results:  
-1. should return positive response
-2. should return category just created
-
-#### 8. Create category with duplicate field 'name' and duplicate field 'slug'  
 
 Payload:  
 
@@ -152,7 +148,23 @@ Expected results:
 2. should return error message: "A duplicate value '\"smartphone_slug\"' exists for field 'slug'."  
 3. should return duplicateValue : "smartphone_slug"
 
-#### 9. Create category with different field 'name' and duplicate field 'slug'  
+#### 8. Create category with different field 'name' and duplicate field 'slug'  
+
+setups:  
+1. Create category with correct field name and correct field slug  
+
+```json 
+{
+  "name": {
+    "en": "smartphone_with_correct_message_for_error_create_test",
+    "de": "smartphone_with_correct_message_for_error_create_test"
+  },
+  "slug": {
+    "en": "smartphone_slug_with_correct_message_for_error_create_test",
+    "de": "smartphone_slug_with_correct_message_for_error_create_test"
+  }
+}
+```
 
 Payload:  
 
@@ -174,7 +186,7 @@ Expected results:
 2. should return error message: "A duplicate value '\"smartphone_slug\"' exists for field 'slug'."  
 3. should return duplicateValue : "smartphone_slug"
 
-#### 10. Create category with wrong format 'description'  
+#### 9. Create category with wrong format 'description'  
 
 Payload:  
 
@@ -197,7 +209,7 @@ Expected results:
 2. should return error message: "Request body does not contain valid JSON."  
 3. should return detailed error message: "description: JSON object expected."
 
-#### 11. Create category with wrong format 'metaTitle'
+#### 10. Create category with wrong format 'metaTitle'
 Payload:  
 
 ```json  
@@ -218,7 +230,7 @@ Expected results:
 2. should return error message: "Request body does not contain valid JSON."  
 3. should return detailed error message: "metaTitle: JSON object expected."   
 
-#### 12. Create category with wrong format 'metaDescription'
+#### 11. Create category with wrong format 'metaDescription'
 
 Payload:  
 
@@ -240,7 +252,7 @@ Expected results:
 2. should return error message: "Request body does not contain valid JSON."  
 3. should return detailed error message: "metaDescription: JSON object expected."  
 
-#### 13. Create category with wrong format 'metaKeywords'
+#### 12. Create category with wrong format 'metaKeywords'
 Payload:  
 body:  
 
@@ -262,7 +274,7 @@ Expected results:
 2. should return error message: "Request body does not contain valid JSON."  
 3. should return detailed error message: "metaKeywords: JSON object expected." 
 
-#### 14. Create category with wrong type of 'orderHint'  
+#### 13. Create category with wrong type of 'orderHint'  
 Payload:  
 
 ```json 
@@ -283,7 +295,7 @@ Expected results:
 2. should return error message: "Request body does not contain valid JSON."  
 3. should return detailed error message: "orderHint: JSON String expected." 
 
-#### 15. Create category with wrong type of 'externalId'  
+#### 14. Create category with wrong type of 'externalId'  
 Payload:   
 
 ```json 
@@ -304,7 +316,7 @@ Expected results:
 2. should return error message: "Request body does not contain valid JSON."  
 3. should return detailed error message: "externalId: JSON String expected." 
 
-#### 16. Create category with parent and no teyeId
+#### 15. Create category with parent and no teyeId
 Note: Different category have different id. The unique ID of the category.
 Payload:  
 
@@ -328,7 +340,7 @@ Expected results:
 2. should return error message: "Request body does not contain valid JSON."  
 3. should return detailed message: "parent -> typeId: Missing required value"  
 
-#### 17. Create category with parent and no id
+#### 16. Create category with parent and no id
 Payload:   
 
 ```json 
@@ -351,7 +363,7 @@ Expected results:
 2. should return error message: "Request body does not contain valid JSON."  
 3. should return detailed message: "parent -> id: Missing required value"  
 
-#### 18. Create category with parent and wrong 'id' value
+#### 17. Create category with parent and wrong 'id' value
 Payload:   
 
 ```json 
@@ -374,7 +386,24 @@ Expected results:
 1. should return positive response  
 2. should return category just create with no parent field
 
-#### 19. Create category with parent and wrong 'typeId' value
+#### 18. Create category with parent with correct 'id' value and wrong 'typeId' value
+
+setups:  
+1. Create category name 'smartphone'.
+
+```json
+{
+  "name": {
+    "en": "en-smartphone_for_parent_typeId_error_test",
+    "de": "de-smartphone_for_parent_typeId_error_test"
+  },
+  "slug": {
+    "en": "en-smartphone_slug_for_parent_typeId_error_test",
+    "de": "de-smartphone_slug_for_parent_typeId_error_test"
+  }
+}
+```
+
 Payload:  
 
 ```json 
@@ -389,7 +418,7 @@ Payload:
   }, 
   "parent": {
     "typeId": "product",
-    "id": "f065f169-306a-45d8-8a6c-4ad8ab85690f"
+    "id": "{id of smartphone}"
   }
 }
 ```
@@ -401,21 +430,6 @@ Expected results:
 
 ## Test suite 2: Function test for CreateCategory 
 Description: This test is to test whether CreateCategory API works fine.
-### Test setup  
-1. Database should contain a category name 'smartphone'as follow: 
-
-```json 
-{
-  "name": {
-    "de": "smartphone",
-    "en": "smartphone"
-  },
-  "slug": {
-    "de": "smartphone_slug",
-    "en": "smartphone_slug"
-  }
-}
-```
 
 ### Test cases
 #### 1. Create category with all required properties  
@@ -438,6 +452,24 @@ Expected results:
 2. should return category just created
 
 #### 2. Create category with all required properties and all optional properties   
+
+setups:  
+1. Database should contain a category name 'smartphone'as follow: 
+
+```json 
+{
+  "name": {
+    "de": "smartphone",
+    "en": "smartphone"
+  },
+  "slug": {
+    "de": "smartphone_slug",
+    "en": "smartphone_slug"
+  }
+}
+```
+
+
 Payload:  
 
 ```json  

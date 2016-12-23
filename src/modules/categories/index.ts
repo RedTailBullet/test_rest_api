@@ -4,7 +4,7 @@ import createError from './create/error'
 
 const ms: ModuleSuites = {
   apiName: 'categories',
-  suites: [createNormal, createError]
+  suites: [createError]
 }
 
 
