@@ -1,23 +1,6 @@
 # Test cases for Query and Get
 
-## Test suite 1: Function test with no category in database  
-Description: This test suite is to test whether QueryCatetgory API works fine with no category in database.  
-
-### Test setup
-1. There is no category in database.  
-
-### Test case
-#### 1. Query categories
-
-Payload:  
-
-Endpoint: '/{projectKey}/categories'  
-
-Expected results:  
-1. should return positive response  
-2. should return 0 result  
-
-## Test suite 2: Error test with no category in database  
+## Test suite 1: Error test with no category in database  
 Description: This test suite is to test whether QueryCategories, GetCategorybyID APIs return the correct error message when there are no product type in database.
 ### Test setup  
 1. There is no category in database.  
@@ -30,24 +13,34 @@ Payload:
 Endpoint: '/{projectKey}/categories/xxxxxxxx-qqqqqqqq-dddddddd-aaaaaa'
 
 Expected results:  
-1. should return positive response.  
-2. should return 0 results.  
+1. should return negative response(404)
 
-## Test suite 3: Function test with 2 category in database
-Description: This test suite is to test whether QueryCatetgory, GetCategorybyID API works fine with 2 category in database.   
+## Test suite 2: Function test for query categories
+Description: This test suite is to test whether QueryCatetgory, GetCategorybyID API works fine.   
 
-### Test setup  
+### Test cases
+#### 1. Query categories with no category in database 
+Payload:  
+
+Endpoint: '/{projectKey}/categories'  
+
+Expected results:  
+1. should return positive response（200）  
+2. should return 0 result  
+
+#### 2. Query category when 2 categories in database
+Test setup  
 1. Create category name 'smartphone'
 
 ```json  
 {
   "name": {
-    "de": "smartphone",
-    "en": "smartphone"
+    "en": "en-smartphone_for_query_function_test",
+    "de": "de-smartphone_for_query_function_test"
   },
   "slug": {
-    "de": "smartphone_slug_for_create_function_test",
-    "en": "smartphone_slug_for_create_function_test"
+    "en": "en-smartphone_slug_for_query_function_test",
+    "de": "de-smartphone_slug_for_query_function_test"
   }
 }
 ```
@@ -56,18 +49,16 @@ Description: This test suite is to test whether QueryCatetgory, GetCategorybyID 
 ```json  
 {
   "name": {
-    "de": "iphone",
-    "en": "iphone"
+    "en": "en-iphone_for_query_function_test",
+    "de": "de-iphone_for_query_function_test"
   },
   "slug": {
-    "de": "iphone_slug_for_create_function_test",
-    "en": "iphone_slug_for_create_function_test"
+    "en": "en-iphone_slug_for_query_function_test",
+    "de": "de-iphone_slug_for_query_function_test"
   }
 }
 ```
 
-### Test cases     
-#### 1. Query category 
 Payload:  
 Endpoint: '/{projectKey}/categories'  
 
@@ -76,7 +67,24 @@ Expected results:
 2. Should return 2 results.
 3. Should return correct results.
 
-#### 2. Get category by ID
+#### 3. Get category by ID when 1 category in database
+
+Test setup  
+1. Create category name 'smartphone'
+
+```json  
+{
+  "name": {
+    "en": "en-smartphone_for_queryByID_function_test",
+    "de": "de-smartphone_for_queryByID_function_test"
+  },
+  "slug": {
+    "en": "en-smartphone_slug_for_queryByID_function_test",
+    "de": "de-smartphone_slug_for_queryByID_function_test"
+  }
+}
+```
+
 Payload:  
 Endpoint: '/{projectKey}/categories/{id of category 'smartphone'}'  
 
