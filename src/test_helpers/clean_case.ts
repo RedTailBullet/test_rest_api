@@ -1,7 +1,7 @@
 import callAPI from './call_api'
 import runSequentially from './run_sequentially'
 
-import { Cleanup, TestCase, TestBase, RequestData } from '../models'
+import { Cleanup, TestCase, TestBase, RequestData, HttpResult } from '../models'
 
 import reportError from '../utilities/report_error'
 
@@ -11,24 +11,27 @@ export default async function (testCase: TestCase) {
   if (setups) {
     setups.forEach((setup) => createCleanups(setup, cleanups))
   }
-  
+
   createCleanups(testCase, cleanups)
   return runSequentially(cleanups)
 }
 
 // we covert CaseSetup and TestCase to Cleanup so not save result on API call
 function createCleanups(testBase: TestBase, cleanups: Cleanup[]) {
-  let requestData = setRequest(testBase)
-  if (isEmptyObject(requestData)) {
-    const err = new Error(`Empty result in Test Case: ${testBase.description}`)
-    reportError(err)
-  } else {
-    try {
-      let testBase: Cleanup = new Cleanup("dummy", requestData)
-      cleanups.unshift(testBase)
-    }
-    catch (error) {
-      console.log(error, 'Error in cleanup, better to check it')
+  let result = testBase.result as HttpResult
+  if (result.httpCode !== 404) {
+    let requestData = setRequest(testBase)
+    if (isEmptyObject(requestData)) {
+      const err = new Error(`Empty result in Test Case: ${testBase.description}`)
+      reportError(err)
+    } else {
+      try {
+        let testBase: Cleanup = new Cleanup("dummy", requestData)
+        cleanups.unshift(testBase)
+      }
+      catch (error) {
+        console.log(error, 'Error in cleanup, better to check it')
+      }
     }
   }
 }
@@ -36,6 +39,7 @@ function createCleanups(testBase: TestBase, cleanups: Cleanup[]) {
 function setRequest(testBase: TestBase) {
   let requestData: RequestData = {}
   let result = testBase.result
+
   if (result && result.data && !isEmptyObject(result.data)) {
     requestData.method = 'delete'
 
@@ -48,7 +52,7 @@ function setRequest(testBase: TestBase) {
   return requestData
 }
 
-function isEmptyObject (object) {
+function isEmptyObject(object) {
   if (Object.keys(object).length === 0) {
     return true
   }

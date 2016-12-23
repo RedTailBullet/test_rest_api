@@ -9,10 +9,10 @@ export default async function (apiName: string, testSuite: TestSuite) {
 
   let projectName = process.env[config.ENV_PROJECT_KEY_NAME]
   let defaultUrl
-  if (projectName) {
-    defaultUrl = `${config.CTP_BASEURL}/${projectName}/${apiName}`
+  if (config.LOCAL_TEST) {
+    defaultUrl = `${config.LOCAL_BASEURL}/${apiName}`
   } else {
-    defaultUrl = `${config.CTP_BASEURL}/${apiName}`
+    defaultUrl = `${config.CTP_BASEURL}/${projectName}/${apiName}`
   }
   testSuite.suiteUrl = defaultUrl
 

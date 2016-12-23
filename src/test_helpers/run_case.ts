@@ -26,6 +26,6 @@ function compareResult(testCase: TestCase) {
 
   let expectedData = expectedResult.data
   if (expectedData) {
-    compare(`${testCase.description} -> result's data`, expectedData, result.data)
+    compare(`${testCase.description} > result's data`, expectedData, result.data)
   }
 }

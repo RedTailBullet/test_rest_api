@@ -2,7 +2,7 @@ import * as Mocha from 'mocha'
 let date = new Date()
 
 let mocha: any = new Mocha ({
-  timeout: 5000,
+  timeout: 8000,
   reporter: 'mochawesome'
 })
 

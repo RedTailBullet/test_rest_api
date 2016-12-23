@@ -11,7 +11,7 @@ function compare(description: string, ExpectedResults, ActualResults) {
   for (let prop of expectedProperties) {
     const expected = ExpectedResults[prop]
     const actual =  ActualResults[prop]
-    const msg = `${errorMsg} -> ${prop}`
+    const msg = `${errorMsg} > ${prop}`
     
     if (typeof expected === 'object') {
       compare(msg, expected, actual)
