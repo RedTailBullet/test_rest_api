@@ -1,5 +1,6 @@
 import { TestCase, HttpResult } from '../../../../../models'
-import s1 from '../setups/s1-c7-1'
+import s1 from '../setups/s7-1'
+let setups = [s1]
 
 let testData = {
   "name": {
@@ -13,7 +14,8 @@ let testData = {
 }
 
 const c: TestCase = {
-  description: 'Case 7. Create category with duplicate field name and duplicate field slug',
+  description: '7. Create category with duplicate field name and duplicate field slug',
+  setups,
   requestData: {
     method: 'post',
     payload: {

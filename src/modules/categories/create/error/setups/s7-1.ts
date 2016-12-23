@@ -2,7 +2,7 @@
 import { TestBase } from '../../../../../models'
 
 let s: TestBase = {
-  description: 'Setup 1 (c7-1): Create category with correct field name and correct field slug',
+  description: 'Setup 7-1: Create category with correct field name and correct field slug',
   requestData: {
     payload: {
       "name": {
