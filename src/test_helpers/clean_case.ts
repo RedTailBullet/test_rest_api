@@ -1,5 +1,6 @@
 import callAPI from './call_api'
 import runSequentially from './run_sequentially'
+import * as config from '../utilities/get-configs'
 
 import { Cleanup, TestCase, TestBase, RequestData, HttpResult } from '../models'
 
@@ -43,7 +44,7 @@ function setRequest(testBase: TestBase) {
   if (result && result.data && !isEmptyObject(result.data)) {
     requestData.method = 'delete'
 
-    let setupUrl = testBase.requestData.url
+    let setupUrl = `${config.getBasicUrl()}/${testBase.apiName}`
     requestData.url = `${setupUrl}/${result.data.id}`
     requestData.params = {
       version: result.data.version

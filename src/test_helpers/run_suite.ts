@@ -1,20 +1,15 @@
 
 import callApi from './call_api'
 import runCase from './run_case'
-import * as config from '../config'
+import * as config from '../utilities/get-configs'
 import { TestCase, TestSuite } from '../models'
 import reportError from '../utilities/report_error'
 
-export default async function (apiName: string, testSuite: TestSuite) {
+export default async function (testSuite: TestSuite) {
 
-  let projectName = process.env[config.ENV_PROJECT_KEY_NAME]
-  let defaultUrl
-  if (config.LOCAL_TEST) {
-    defaultUrl = `${config.LOCAL_BASEURL}/${apiName}`
-  } else {
-    defaultUrl = `${config.CTP_BASEURL}/${projectName}/${apiName}`
-  }
-  testSuite.suiteUrl = defaultUrl
+  const apiName = testSuite.apiName
+  let defaultUrl = config.getBasicUrl()
+  testSuite.suiteUrl = `${defaultUrl}/${apiName}`
 
   describe(testSuite.description, function () {
     try {
@@ -43,11 +38,17 @@ function setupCaseRequest(testCase: TestCase, testSuite: TestSuite) {
       if (!setup.requestData.method) {
         setup.requestData.method = testSuite.setupMethod
       }
+      if (!setup.apiName) {
+        setup.apiName = testSuite.apiName
+      }
     })
   }
 
   if (!testCase.requestData.method) {
     testCase.requestData.method = testSuite.testCaseMethod
+  }
+  if (!testCase.apiName) {
+    testCase.apiName = testSuite.apiName
   }
 }
 

@@ -1,11 +1,11 @@
 
 import { TestCase } from '../../../../../models'
 
-import c1 from './c1'
-import c2 from './c2'
+import c01 from './c01'
+import c02 from './c02'
 
 const testCase: TestCase[] = [
-  c1, c2
+  c01, c02
 ]
 
 export default testCase

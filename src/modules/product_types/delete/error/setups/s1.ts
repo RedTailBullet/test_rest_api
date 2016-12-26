@@ -1,7 +1,7 @@
 import { CaseSetup } from '../../../../../models'
 
 let s: CaseSetup = {
-  description: 'Setup 1: Create the 1st product for delete error test',
+  description: 'Setup 1: Create the product type for delete error test',
   requestData: {
     payload: {
       name: 'error-test-product-type-for-delete',

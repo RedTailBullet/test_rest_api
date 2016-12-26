@@ -1,12 +1,12 @@
 import { TestCase, HttpResult, CaseSetup } from '../../../../../models'
-import s1 from '../setups/s1'
+import s01 from '../setups/s01'
 
-const s: CaseSetup[] = [ s1 ]
+const s: CaseSetup[] = [ s01 ]
 
 const c: TestCase = {
   description: '1. Delete product type by id',
   config: function (this: TestCase) {
-    let result = s1.result as HttpResult
+    let result = s01.result as HttpResult
     if (result.data) {
       this.requestData.url = `${this.requestData.url}/${result.data.id}`
     }

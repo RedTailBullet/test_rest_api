@@ -1,6 +1,5 @@
 import * as request from 'axios'
 import { RequestData } from '../models'
-import * as config from '../config'
 
 /**
  * convert HTTP response errors into normal response result 

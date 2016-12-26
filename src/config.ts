@@ -1,12 +1,16 @@
-// enviornment variable names
-export const ENV_CLIENT_ID_NAME = 'CTP_CLIENT_ID'
-export const ENV_CLIENT_SECRET_NAME = 'CTP_CLIENT_SECRET'
-export const ENV_PROJECT_KEY_NAME = 'CTP_PROJECT_KEY'
+import * as configModel from './models/config'
 
-export const CTP_BASEURL = 'https://api.sphere.io'
-// export const CTP_BASEURL = 'http://192.168.8.132:8088'
-export const LOCAL_BASEURL = 'http://localhost:8088'
+export const USING_CONFIG = 'CTPConfig'
 
-export const NEED_ACCESS_TOKEN = true
+export const CTPConfig: configModel.config = {
+  BASEURL: `https://api.sphere.io`,
+  NEED_ACCESS_TOKEN: true,
+  CLIENT_ID: process.env.CTP_CLIENT_ID,
+  CLIENT_SECRET: process.env.CTP_CLIENT_SECRET,
+  PROJECT_NAME: process.env.CTP_PROJECT_KEY
+}
 
-export const LOCAL_TEST = false
+export const LocalConfig: configModel.config = {
+  BASEURL: 'http://localhost:8088',
+  NEED_ACCESS_TOKEN: false
+}

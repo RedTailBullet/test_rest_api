@@ -1,7 +1,7 @@
 
 import { CaseSetup } from '../../../../../models'
 let s: CaseSetup = {
-  description: 'Setup 2: Create the 2nd product for delete normal test',
+  description: 'Setup 2: Create the 2nd product type for delete normal test',
   requestData: {
     payload: {
       'name': 'function-test-product-type-for-delete-2',

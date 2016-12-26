@@ -26,6 +26,7 @@ export interface TestBase {
   config?: (setups?: CaseSetup[]) => void
   result?: HttpResult
   expectedResult?: HttpResult
+  apiName?: string
 }
 
 export interface CaseSetup extends TestBase {
@@ -50,6 +51,7 @@ export interface TestCase extends TestBase {
 export interface TestSuite {
   description: string
   suiteUrl?: string   // set at runtime
+  apiName?: string
   testCases: TestCase[]
   setupMethod: HttpMethod   // must set method at suite level
   testCaseMethod: HttpMethod  // must set method at suite level

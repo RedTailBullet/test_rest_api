@@ -1,11 +1,11 @@
 import * as request from 'axios'
 import * as uuid from 'uuid'
-import * as config from '../config'
+import * as config from './get-configs'
 import reportError from '../utilities/report_error'
 
-const client_id = process.env[config.ENV_CLIENT_ID_NAME]
-const client_secret = process.env[config.ENV_CLIENT_SECRET_NAME]
-const project_key = process.env[config.ENV_PROJECT_KEY_NAME]
+const client_id = config.getClientID()
+const client_secret = config.getClientSecret()
+const project_key = config.getProjectName()
 
 const authUrl = `https://${client_id}:${client_secret}` +
   `@auth.sphere.io/oauth/${project_key}/anonymous/token`

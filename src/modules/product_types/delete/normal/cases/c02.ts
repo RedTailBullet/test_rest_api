@@ -1,14 +1,14 @@
 import { TestCase, HttpResult, CaseSetup } from '../../../../../models'
-import s2 from '../setups/s2'
+import s02 from '../setups/s02'
 
 const s: CaseSetup[] = [
-  s2
+  s02
 ]
 
 const c: TestCase = {
   description: '2. Delete product type by key',
   config: function (this: TestCase) {
-    this.requestData.url = `${this.requestData.url}/key=${s2.requestData.payload.key}`
+    this.requestData.url = `${this.requestData.url}/key=${s02.requestData.payload.key}`
   },
   setups: s,
   requestData: {
