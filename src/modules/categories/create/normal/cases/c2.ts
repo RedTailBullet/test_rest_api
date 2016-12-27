@@ -59,11 +59,11 @@ const c: TestCase = {
     }
   },
   expectedResult: {
-    httpCode: 201,
+    httpCode: 200,
     data: {
       ...commonData,
       'id': '',
-      'version': 1,
+      'version': 0,
       'lastMessageSequenceNumber': 1,
       'orderHint': '',
       'createdAt': '',

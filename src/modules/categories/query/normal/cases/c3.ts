@@ -30,7 +30,7 @@ const c: TestCase = {
     data: {
       ...testData,
       'id': '',
-      'version': 1,
+      'version': 0,
       'ancestors': [],
       'orderHint': '',
       'createdAt': '',

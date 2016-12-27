@@ -33,7 +33,7 @@ const c: TestCase = {
     }
   },
   expectedResult: {
-    httpCode: 201
+    httpCode: 200
   }
 }
 

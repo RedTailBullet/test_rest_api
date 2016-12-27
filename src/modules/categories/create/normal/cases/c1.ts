@@ -18,11 +18,11 @@ const c: TestCase = {
 		}
 	},
 	expectedResult: {
-		httpCode: 201,
+		httpCode: 200,
 		data: {
 			...testData,
 			'id': '',
-			'version': 1,
+			'version': 0,
 			'ancestors': [],
       'orderHint': '',
       'createdAt': '',
