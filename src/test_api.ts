@@ -7,11 +7,15 @@ import reportError from './utilities/report_error'
 import runModule from './test_helpers/run_module'
 
 /***************import test modules below *******************/
-import categories from './modules/categories'
+// import categories from './modules/categories'
 import productType from './modules/product_types'
+import inventory from './modules/inventory'
+import taxCategories from './modules/tax_categories'
 let modules: ModuleSuites[] = [
-  productType,
-  // categories
+  productType
+  // categories,
+  // inventory
+  // taxCategories
 ]
 /***************import test modules above *******************/
 

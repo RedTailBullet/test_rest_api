@@ -11,7 +11,11 @@ export default async function (testBase: TestBase, setups?: CaseSetup[]) {
   let resp = await callApi(testBase.requestData)
   let tb = testBase // avoid IDE bug 
   if (!(tb instanceof Cleanup)) {
-
+    // if (resp.data.errors) {
+    //   let errors = resp.data.errors
+    //   errors.forEach((err) => { console.log(err) })
+    // }
+    // console.log(resp)
     let responseData: any = resp.data
     let result: HttpResult = {
       data: responseData,

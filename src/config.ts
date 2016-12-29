@@ -1,6 +1,6 @@
 import * as configModel from './models/config'
 
-export const USING_CONFIG = 'CTPConfig'
+export const USING_CONFIG = 'LocalConfig'
 
 export const CTPConfig: configModel.config = {
   BASEURL: `https://api.sphere.io`,
@@ -12,5 +12,10 @@ export const CTPConfig: configModel.config = {
 
 export const LocalConfig: configModel.config = {
   BASEURL: 'http://localhost:8088',
+  NEED_ACCESS_TOKEN: false
+}
+
+export const LocalConfig2: configModel.config = {
+  BASEURL: 'http://192.168.8.151:8088',
   NEED_ACCESS_TOKEN: false
 }

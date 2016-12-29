@@ -38,8 +38,8 @@ function setupCaseRequest(testCase: TestCase, testSuite: TestSuite) {
       if (!setup.requestData.method) {
         setup.requestData.method = testSuite.setupMethod
       }
-      if (!setup.apiName) {
-        setup.apiName = testSuite.apiName
+      if (!setup.requestData.apiName) {
+        setup.requestData.apiName = testSuite.apiName
       }
     })
   }
@@ -47,8 +47,8 @@ function setupCaseRequest(testCase: TestCase, testSuite: TestSuite) {
   if (!testCase.requestData.method) {
     testCase.requestData.method = testSuite.testCaseMethod
   }
-  if (!testCase.apiName) {
-    testCase.apiName = testSuite.apiName
+  if (!testCase.requestData.apiName) {
+    testCase.requestData.apiName = testSuite.apiName
   }
 }
 

@@ -5,6 +5,7 @@ export interface RequestData {
   url?: string
   payload?: any
   params?: {[prop: string]: string|number|boolean}
+  apiName?: string
 }
 
 export interface EntityProps {
@@ -25,8 +26,6 @@ export interface TestBase {
   // an optional config function that takes an array of setups 
   config?: (setups?: CaseSetup[]) => void
   result?: HttpResult
-  expectedResult?: HttpResult
-  apiName?: string
 }
 
 export interface CaseSetup extends TestBase {
@@ -46,6 +45,7 @@ export class Cleanup implements TestBase {
 export interface TestCase extends TestBase {
   setups?: CaseSetup[]
   cleanup?: () => void
+  expectedResult: HttpResult
 }
 
 export interface TestSuite {

@@ -13,36 +13,36 @@ const c: TestCase = {
   },
   setups: s,
   requestData: {
-    params: { version: 1 }
+    params: { version: 0 }
   },
   expectedResult: {
     httpCode: 200,
-    data: {
-      'id': '2cba3d03-58e3-4dff-a703-a5a6eced4969',
-      'version': 1,
-      'name': 'function-test-product-type-for-delete-1',
-      'description': 'function test product type for delete 1',
-      'classifier': 'Complex',
-      'attributes': [
-        {
-          'name': 'function-test-attribute-definition-for-delete-1',
-          'label': {
-            'en': 'function test attribute definition for delete 1'
-          },
-          'isRequired': true,
-          'type': {
-            'name': 'text'
-          },
-          'attributeConstraint': 'None',
-          'isSearchable': true,
-          'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
-        }
-      ],
-      'key': 'function-test-product-type-for-delete-1',
-      'createdAt': '2016-12-13T08:28:11.741Z',
-      'lastModifiedAt': '2016-12-13T08:28:11.741Z'
-    }
+    // data: {
+    //   'id': '2cba3d03-58e3-4dff-a703-a5a6eced4969',
+    //   'version': 0,
+    //   'name': 'function-test-product-type-for-delete-1',
+    //   'description': 'function test product type for delete 1',
+    //   'classifier': 'Complex',
+    //   'attributes': [
+    //     {
+    //       'name': 'function-test-attribute-definition-for-delete-1',
+    //       'label': {
+    //         'en': 'function test attribute definition for delete 1'
+    //       },
+    //       'isRequired': true,
+    //       'type': {
+    //         'name': 'text'
+    //       },
+    //       'attributeConstraint': 'None',
+    //       'isSearchable': true,
+    //       'inputHint': 'SingleLine',
+    //       'displayGroup': 'Other'
+    //     }
+    //   ],
+    //   'key': 'function-test-product-type-for-delete-1',
+    //   'createdAt': '2016-12-13T08:28:11.741Z',
+    //   'lastModifiedAt': '2016-12-13T08:28:11.741Z'
+    // }
   }
 }
 

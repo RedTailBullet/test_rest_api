@@ -16,7 +16,10 @@ let s: CaseSetup = {
           'label': {
             'en': 'function test attribute definition for delete 1'
           },
-          'isRequired': true
+          'isRequired': true,
+          attributeConstraint: 'None',
+          inputHint: 'SingleLine',
+          isSearchable: true
         }
       ]
     }

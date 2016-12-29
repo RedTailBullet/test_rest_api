@@ -1,6 +1,6 @@
 import callAPI from './call_api'
 import runSequentially from './run_sequentially'
-import * as config from '../utilities/get-configs'
+import * as config from '../utilities/get_configs'
 
 import { Cleanup, TestCase, TestBase, RequestData, HttpResult } from '../models'
 
@@ -20,15 +20,16 @@ export default async function (testCase: TestCase) {
 // we covert CaseSetup and TestCase to Cleanup so not save result on API call
 function createCleanups(testBase: TestBase, cleanups: Cleanup[]) {
   let result = testBase.result as HttpResult
+  let base = testBase
   if (result.httpCode !== 404) {
-    let requestData = setRequest(testBase)
-    if (isEmptyObject(requestData)) {
-      const err = new Error(`Empty result in Test Case: ${testBase.description}`)
-      reportError(err)
+    if (!result.data) {
+      // const err = new Error(`Empty result in Test Case: ${testBase.description}`)
+      // reportError(err)
     } else {
       try {
-        let testBase: Cleanup = new Cleanup("dummy", requestData)
-        cleanups.unshift(testBase)
+        let requestData = setRequest(testBase)
+        let cleanup: Cleanup = new Cleanup("dummy", requestData)
+        cleanups.unshift(cleanup)
       }
       catch (error) {
         console.log(error, 'Error in cleanup, better to check it')
@@ -44,7 +45,7 @@ function setRequest(testBase: TestBase) {
   if (result && result.data && !isEmptyObject(result.data)) {
     requestData.method = 'delete'
 
-    let setupUrl = `${config.getBasicUrl()}/${testBase.apiName}`
+    let setupUrl = `${config.getBasicUrl()}/${testBase.requestData.apiName}`
     requestData.url = `${setupUrl}/${result.data.id}`
     requestData.params = {
       version: result.data.version
