@@ -5,10 +5,7 @@ let testData = {
     "en": "smartphone_of_metaKeywords_error_test",
     "de": "smartphone_of_metaKeywords_error_test"
   },
-  "slug": {
-    "en": "smartphone_slug_of_metaKeywords_error_test",
-    "de": "smartphone_slug_of_metaKeywords_error_test"
-  },
+  "slug": "en-smartphone_slug_of_metaKeywords_error_test",
   "metaKeywords": "phone"
 }
 

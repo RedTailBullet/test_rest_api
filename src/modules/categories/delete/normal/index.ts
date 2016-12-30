@@ -6,7 +6,7 @@ let suite: TestSuite = {
 	description: 'Normal tests for category deletion',
   testCases: testCases,
 	setupMethod: 'post',
-	testCaseMethod: 'post'
+	testCaseMethod: 'delete'
 }
 
 export default suite

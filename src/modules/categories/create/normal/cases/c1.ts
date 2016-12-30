@@ -4,10 +4,7 @@ let testData = {
 		'de': 'de-smartphone_with_all_required_properties',
 		'en': 'en-smartphone_with_all_required_properties'
 	},
-	'slug': {
-		'de': 'de-smartphone_slug_with_all_required_properties',
-		'en': 'en-smartphone_slug_with_all_required_properties'
-	}
+	'slug': 'en-smartphone_slug_with_all_required_properties'
 }
 
 const c: TestCase = {
@@ -24,10 +21,8 @@ const c: TestCase = {
 			'id': '',
 			'version': 0,
 			'ancestors': [],
-      'orderHint': '',
       'createdAt': '',
-      'lastModifiedAt': '',
-      'lastMessageSequenceNumber': 1
+      'lastModifiedAt': ''
 		}
 	}
 }

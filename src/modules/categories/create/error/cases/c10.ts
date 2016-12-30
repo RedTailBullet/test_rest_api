@@ -5,10 +5,7 @@ let testData = {
     "en": "smartphone_with_wrong_format_metaTitle",
     "de": "smartphone_with_wrong_format_metaTitle"
   },
-  "slug": {
-    "en": "smartphone_slug_with_wrong_format_metaTitle",
-    "de": "smartphone_slug_with_wrong_format_metaTitle"
-  },
+  "slug": "en-smartphone_slug_with_wrong_format_metaTitle",
   "metaTitle": "smartphone"
 }
 

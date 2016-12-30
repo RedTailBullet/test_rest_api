@@ -510,3 +510,12 @@ Expected results:
 1. should return positive response.
 2. should return category just created  
 
+```json
+occurrence                            | exception             | http code -|-|-|-  
+
+parent CategoryEntity is null         | NotExistException     | 404  
+
+same name in same root CategoryEntity | AlreadyExistException | 409  
+
+slug is exist                         | AlreadyExistException | 409  
+```

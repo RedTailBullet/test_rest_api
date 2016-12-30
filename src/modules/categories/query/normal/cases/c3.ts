@@ -4,13 +4,10 @@ import s1 from '../setups/s3-1'
 let setups = [s1]
 let testData = {
   "name": {
-    "en": "en-smartphone_for_queryByID_function_test",
-    "de": "de-smartphone_for_queryByID_function_test"
+    "en": "en-smartphone_for_queryByID_function_test-1",
+    "de": "de-smartphone_for_queryByID_function_test-1"
   },
-  "slug": {
-    "en": "en-smartphone_slug_for_queryByID_function_test",
-    "de": "de-smartphone_slug_for_queryByID_function_test"
-  }
+  "slug": "en-smartphone_slug_for_queryByID_function_test-6"
 }
 
 const c: TestCase = {
@@ -21,7 +18,7 @@ const c: TestCase = {
     if(result.data) {
       this.requestData.url = `${this.requestData.url}/${result.data.id}`
     }
-  }, 
+  },
   requestData: {
     payload: {}
   },
@@ -32,10 +29,8 @@ const c: TestCase = {
       'id': '',
       'version': 0,
       'ancestors': [],
-      'orderHint': '',
       'createdAt': '',
-      'lastModifiedAt': '',
-      'lastMessageSequenceNumber': 1
+      'lastModifiedAt': ''
     }
   }
 }

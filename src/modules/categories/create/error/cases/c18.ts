@@ -7,10 +7,7 @@ let testData = {
     "en": "iphone_error_test_with_wrong_typeId_value",
     "de": "iphone_error_test_with_wrong_typeId_value"
   },
-  "slug": {
-    "en": "iphone_slug_error_test_with_wrong_typeId_value", 
-    "de": "iphone_slug_error_test_with_wrong_typeId_value" 
-  }, 
+  "slug": "en-iphone_slug_error_test_with_wrong_typeId_value", 
   "parent": {
     "typeId": "product",
     "id": "{id of setups[1]}"

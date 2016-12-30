@@ -8,10 +8,7 @@ let s: TestBase = {
         "de": "smartphone",
         "en": "smartphone"
       },
-      "slug": {
-        "de": "smartphone_slug",
-        "en": "smartphone_slug"
-      }
+      "slug": "en-smartphone_slug"
     }
   }
 }

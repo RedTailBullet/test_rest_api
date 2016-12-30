@@ -7,10 +7,7 @@ let testData = {
     "en": "smartphone_with_correct_message_for_error_create_test",
     "de": "smartphone_with_correct_message_for_error_create_test"
   },
-  "slug": {
-    "en": "smartphone_slug_with_correct_message_for_error_create_test",
-    "de": "smartphone_slug_with_correct_message_for_error_create_test"
-  }
+  "slug": "en-smartphone_slug_with_correct_message_for_error_create_test-1"
 }
 
 const c: TestCase = {
@@ -23,7 +20,7 @@ const c: TestCase = {
     }
   },
   expectedResult: {
-    httpCode: 400
+    httpCode: 409
   }
 }
 

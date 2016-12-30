@@ -5,13 +5,10 @@ let s: TestBase = {
   requestData: {
     payload: {
       "name": {
-        "en": "en-smartphone_for_query_function_test",
-        "de": "de-smartphone_for_query_function_test"
+        "en": "en-smartphone_for_query_function_test-1",
+        "de": "de-smartphone_for_query_function_test-1"
       },
-      "slug": {
-        "en": "en-smartphone_slug_for_query_function_test",
-        "de": "de-smartphone_slug_for_query_function_test"
-      }
+      "slug": "en-smartphone_slug_for_query_function_test-1"
     }
   }
 }
