@@ -8,10 +8,7 @@ let s: TestBase = {
         "en": "en-smartphone_for_parent_typeId_error_test",
         "de": "de-smartphone_for_parent_typeId_error_test"
       },
-      "slug": {
-        "en": "en-smartphone_slug_for_parent_typeId_error_test",
-        "de": "de-smartphone_slug_for_parent_typeId_error_test"
-      }
+      "slug": "en-en-smartphone_slug_for_parent_typeId_error_test"
     }
   }
 }

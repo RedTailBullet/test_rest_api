@@ -1,4 +1,4 @@
-import { TestCase } from '../../../../../models'
+import { TestCase, HttpResult } from '../../../../../models'
 import s1 from '../setups/s2-1'
 import s2 from '../setups/s2-2'
 let setups = [s1, s2]

@@ -7,10 +7,7 @@ let commonData = {
     'de': 'de-smartphone_with_all_properties',
     'en': 'en-smartphone_with_all_properties'
   },
-  'slug': {
-    'de': 'de-smartphone_slug_with_all_properties',
-    'en': 'en-smartphone_slug_with_all_properties'
-  },
+  'slug': 'en-smartphone_slug_with_all_properties',
   'parent': {
     'typeId': 'category',
     'id': ''
@@ -43,7 +40,6 @@ const c: TestCase = {
     const expected = this.expectedResult as HttpResult
     if (result.data && expected.data) {
       this.requestData.payload.parent.id = `${result.data.id}`
-
       expected.data['parent'].id = `${result.data.id}`
       expected.data['ancestors'] = [
         {
@@ -59,13 +55,11 @@ const c: TestCase = {
     }
   },
   expectedResult: {
-    httpCode: 201,
+    httpCode: 200,
     data: {
       ...commonData,
       'id': '',
-      'version': 1,
-      'lastMessageSequenceNumber': 1,
-      'orderHint': '',
+      'version': 0,
       'createdAt': '',
       'lastModifiedAt': ''
     }

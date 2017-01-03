@@ -8,7 +8,7 @@ import queryError from './query/error'
 
 const ms: ModuleSuites = {
   apiName: 'categories',
-  suites: [queryNormal, queryError]
+  suites: [deleteNormal]
 }
 
 export default ms

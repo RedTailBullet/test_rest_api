@@ -5,10 +5,7 @@ let testData = {
     "en": "smartphone_of_orderHint_error_test",
     "de": "smartphone_of_orderHint_error_test"
   },
-  "slug": {
-    "en": "smartphone_slug_of_orderHint_error_test",
-    "de": "smartphone_slug_of_orderHint_error_test"
-  },
+  "slug": "en-smartphone_slug_of_orderHint_error_test",
   "orderHint": 0.00031481093037113502170356
 }
 

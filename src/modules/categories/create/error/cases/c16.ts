@@ -5,10 +5,7 @@ let testData = {
     "en": "iphone_error_test_with_no_id",
     "de": "iphone_error_test_with_no_id"
   },
-  "slug": {
-    "en": "iphone_slug_error_test_with_no_id", 
-    "de": "iphone_slug_error_test_with_no_id" 
-  }, 
+  "slug": "en-iphone_slug_error_test_with_no_id", 
   "parent": {
     "typeId": "category"
   }

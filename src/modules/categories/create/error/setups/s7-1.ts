@@ -9,10 +9,7 @@ let s: TestBase = {
         "en": "smartphone_with_correct_message_for_error_create_test",
         "de": "smartphone_with_correct_message_for_error_create_test"
       },
-      "slug": {
-        "en": "smartphone_slug_with_correct_message_for_error_create_test",
-        "de": "smartphone_slug_with_correct_message_for_error_create_test"
-      }
+      "slug": "en-smartphone_slug_with_correct_message_for_error_create_test-1"
     }
   }
 }

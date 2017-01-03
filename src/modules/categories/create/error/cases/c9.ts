@@ -5,10 +5,7 @@ let testData = {
     "en": "smartphone",
     "de": "smartphone"
   },
-  "slug": {
-    "en": "smartphone_slug_of_description_error_test",
-    "de": "smartphone_slug_of_description_error_test"
-  },
+  "slug": "en-smartphone_slug_of_description_error_test",
   "description": "Smartphone is more and more popular in world"
 }
 

@@ -5,10 +5,7 @@ let testData = {
     "en": "iphone_error_test_with_wrong_id_value",
     "de": "iphone_error_test_with_wrong_id_value"
   },
-  "slug": {
-    "en": "iphone_slug_error_test_with_wrong_id_value", 
-    "de": "iphone_slug_error_test_with_wrong_id_value" 
-  }, 
+  "slug": "en-iphone_slug_error_test_with_wrong_id_value", 
   "parent": {
     "typeId": "category",
     "id": "11111169-306a-45d8-8a6c-4ad8ab85690f"
@@ -24,7 +21,7 @@ const c: TestCase = {
     }
   },
   expectedResult: {
-    httpCode: 201 
+    httpCode: 200
   }
 }
 

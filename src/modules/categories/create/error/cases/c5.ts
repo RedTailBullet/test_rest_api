@@ -5,10 +5,7 @@ let testData = {
     "en": "smartphone_slug_contain_illegal_characters",
     "de": "smartphone_slug_contain_illegal_characters"
   },
-  "slug": {
-    "en": "smartphone_slug_[...,,,   '''///&&&!!!@@@]",
-    "de": "smartphone_slug_[...,,,   '''///&&&!!!@@@]"
-  }
+  "slug": "en-smartphone_slug_[...,,,   '''///&&&!!!@@@]"
 }
 
 const c: TestCase = {
