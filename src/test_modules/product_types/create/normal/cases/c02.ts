@@ -9,13 +9,13 @@ const c: TestCase = {
     }
   },
   expectedResult: {
-    httpCode: 201,
+    httpCode: 200,
     data: {
       'id': '5f011575-0f6b-4e0b-b638-b0264119e4d7',
-      'version': 1,
+      'version': 0,
       'name': 'function test product type 2',
       'description': 'function test product type 2',
-      'classifier': 'Complex',
+      // 'classifier': 'Complex',
       'attributes': [],
       'createdAt': '2016-12-09T05:59:14.716Z',
       'lastModifiedAt': '2016-12-09T05:59:14.716Z'

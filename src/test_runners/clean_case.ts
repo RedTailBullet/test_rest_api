@@ -1,10 +1,10 @@
-import callAPI from './call_api'
-import runSequentially from './run_sequentially'
-import * as config from '../utilities/get_configs'
+import callAPI from './utilities/call_api'
+import runSequentially from './utilities/run_sequentially'
+import * as config from './utilities/get_configs'
 
-import { Cleanup, TestCase, TestBase, RequestData, HttpResult } from '../models'
+import { Cleanup, TestCase, TestBase, RequestData, HttpResult } from './models'
 
-import reportError from '../utilities/report_error'
+import reportError from './utilities/report_error'
 
 export default async function (testCase: TestCase) {
   let cleanups: Cleanup[] = []
@@ -14,7 +14,7 @@ export default async function (testCase: TestCase) {
   }
 
   createCleanups(testCase, cleanups)
-  return runSequentially(cleanups)
+  await runSequentially(cleanups)
 }
 
 // we covert CaseSetup and TestCase to Cleanup so not save result on API call

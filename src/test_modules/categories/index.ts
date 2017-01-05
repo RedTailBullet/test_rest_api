@@ -1,4 +1,4 @@
-import { ModuleSuites } from '../../models/module_suites'
+import { ModuleSuites } from '../../test_runners/models/module_suites'
 import createNormal from './create/normal'
 import createError from './create/error'
 import deleteNormal from './delete/normal'

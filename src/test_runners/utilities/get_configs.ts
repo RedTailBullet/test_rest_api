@@ -1,4 +1,4 @@
-import * as config from '../config'
+import * as config from '../../config'
 
 const usingConfig = config.USING_CONFIG
 const configSet = config[usingConfig]

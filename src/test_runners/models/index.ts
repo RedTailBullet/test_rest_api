@@ -16,7 +16,12 @@ export interface EntityProps {
 
 export interface HttpResult {
   httpCode: number
-  data?: EntityProps 
+
+  // an output description of what should be expected in actual result
+  // it usually goes like: 'Should return correct http code and data'
+  // the default output is 'Should return correct http code and data'
+  description?: string
+  data?: EntityProps
 }
 
 export interface TestBase {

@@ -213,13 +213,13 @@ const c: TestCase = {
     }
   },
   expectedResult: {
-    httpCode: 201,
+    httpCode: 200,
     data: {
       'id': 'd1604c66-0b46-48ca-9749-6059505b19a5',
-      'version': 1,
+      'version': 0,
       'name': 'function-test-product-type-1',
       'description': 'function test product type 1',
-      'classifier': 'Complex',
+      // 'classifier': 'Complex',
       'attributes': [
         {
           'name': 'function-test-attribute-definition-text',
@@ -236,7 +236,7 @@ const c: TestCase = {
           'attributeConstraint': 'Unique',
           'isSearchable': false,
           'inputHint': 'MultiLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-enum',
@@ -263,7 +263,7 @@ const c: TestCase = {
           'attributeConstraint': 'Unique',
           'isSearchable': false,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-boolean',
@@ -280,7 +280,7 @@ const c: TestCase = {
           'attributeConstraint': 'CombinationUnique',
           'isSearchable': true,
           'inputHint': 'MultiLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-ltext',
@@ -297,7 +297,7 @@ const c: TestCase = {
           'attributeConstraint': 'SameForAll',
           'isSearchable': true,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-lenum',
@@ -328,7 +328,7 @@ const c: TestCase = {
           'attributeConstraint': 'None',
           'isSearchable': true,
           'inputHint': 'MultiLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-number',
@@ -345,7 +345,7 @@ const c: TestCase = {
           'attributeConstraint': 'None',
           'isSearchable': false,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-money',
@@ -362,7 +362,7 @@ const c: TestCase = {
           'attributeConstraint': 'SameForAll',
           'isSearchable': true,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-date',
@@ -379,7 +379,7 @@ const c: TestCase = {
           'attributeConstraint': 'Unique',
           'isSearchable': true,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-time',
@@ -396,7 +396,7 @@ const c: TestCase = {
           'attributeConstraint': 'CombinationUnique',
           'isSearchable': false,
           'inputHint': 'MultiLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-datetime',
@@ -413,7 +413,7 @@ const c: TestCase = {
           'attributeConstraint': 'None',
           'isSearchable': false,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'function-test-attribute-definition-reference',
@@ -431,7 +431,7 @@ const c: TestCase = {
           'attributeConstraint': 'None',
           'isSearchable': true,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         }
       ],
       'key': 'function-test-product-type-1',

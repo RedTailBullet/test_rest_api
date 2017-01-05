@@ -1,6 +1,6 @@
 import * as request from 'axios'
 import * as uuid from 'uuid'
-import * as config from './get-configs'
+import * as config from './get_configs'
 import reportError from '../utilities/report_error'
 
 const client_id = config.getClientID()

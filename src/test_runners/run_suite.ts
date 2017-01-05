@@ -1,9 +1,8 @@
 
-import callApi from './call_api'
 import runCase from './run_case'
-import * as config from '../utilities/get-configs'
-import { TestCase, TestSuite } from '../models'
-import reportError from '../utilities/report_error'
+import * as config from './utilities/get_configs'
+import { TestCase, TestSuite } from './models'
+import reportError from './utilities/report_error'
 
 export default async function (testSuite: TestSuite) {
 
@@ -15,9 +14,8 @@ export default async function (testSuite: TestSuite) {
     try {
       testSuite.testCases.forEach(testCase => {
         setupCaseRequest(testCase, testSuite)
-        it(testCase.description, function () {
-          return runCase(testCase)
-        })
+
+        runCase(testCase)
       })
     } catch (error) {
       reportError(error)
@@ -51,5 +49,3 @@ function setupCaseRequest(testCase: TestCase, testSuite: TestSuite) {
     testCase.requestData.apiName = testSuite.apiName
   }
 }
-
-

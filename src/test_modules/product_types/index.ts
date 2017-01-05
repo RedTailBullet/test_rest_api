@@ -1,4 +1,4 @@
-import { ModuleSuites } from '../../models/module_suites'
+import { ModuleSuites } from '../../test_runners/models/module_suites'
 import createError from './create/error'
 import createNormal from './create/normal'
 import deleteNormal from './delete/normal'
@@ -9,8 +9,8 @@ const ms: ModuleSuites = {
   apiName: 'product-types',
   suites: [
     // createError,
-    // createNormal,
-    deleteNormal
+    createNormal,
+    deleteNormal,
     // deleteError,
     // updateNormal
   ]

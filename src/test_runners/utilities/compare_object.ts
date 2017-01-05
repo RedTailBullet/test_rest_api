@@ -18,8 +18,10 @@ function compare(description: string, ExpectedResults, ActualResults) {
     } else if (IGNORED.indexOf(prop) !== -1) {
       expect(actual, msg).to.not.be.undefined
       continue
+    } else if (actual === undefined) {
+      throw new chai.AssertionError(`${msg} is undefined in actual data`)
     } else {
-      expect(expected, msg).to.equal(actual)
+      expect(actual, msg).to.equal(expected)
     }
   }
 }
