@@ -1,4 +1,4 @@
-import { TestCase } from '../../../../../models'
+import { TestCase } from '../../../../../test_runners/models'
 
 const c: TestCase = {
   description: '6. Create product type with no name in attribute definition draft',

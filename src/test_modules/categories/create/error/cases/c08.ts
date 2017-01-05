@@ -1,5 +1,5 @@
 
-import { TestCase, HttpResult } from '../../../../../models'
+import { TestCase, HttpResult } from '../../../../../test_runners/models'
 import s1 from '../setups/s8-1'
 let setups = [s1]
 

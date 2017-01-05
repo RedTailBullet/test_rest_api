@@ -1,5 +1,5 @@
 
-import { TestBase } from '../../../../../models'
+import { TestBase } from '../../../../../test_runners/models'
 
 let s: TestBase = {
   description: 'Setup 8-1: Create category with correct field name and correct field slug',

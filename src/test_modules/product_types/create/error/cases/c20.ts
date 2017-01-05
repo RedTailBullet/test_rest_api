@@ -1,4 +1,4 @@
-import { TestCase } from '../../../../../models'
+import { TestCase } from '../../../../../test_runners/models'
 
 const c: TestCase = {
   description: '20. Create product type with name too short in attribute definition draft',

@@ -1,4 +1,4 @@
-import { TestBase, HttpResult } from '../../../../../models'
+import { TestBase, HttpResult } from '../../../../../test_runners/models'
 
 let s: TestBase = {
   description: 'Setup 2-2: Create function-test-Category-samsung-for-delete',

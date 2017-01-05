@@ -1,4 +1,4 @@
-import { TestCase, HttpResult, CaseSetup } from '../../../../../models'
+import { TestCase, HttpResult, CaseSetup } from '../../../../../test_runners/models'
 import s02 from '../setups/s02'
 
 const s: CaseSetup[] = [

@@ -1,5 +1,5 @@
 
-import { TestCase } from '../../../../../models'
+import { TestCase } from '../../../../../test_runners/models'
 
 import c1 from './c1'
 import c2 from './c2'

@@ -9,10 +9,10 @@ const ms: ModuleSuites = {
   apiName: 'product-types',
   suites: [
     // createError,
-    createNormal,
-    deleteNormal,
+    // createNormal,
+    // deleteNormal,
     // deleteError,
-    // updateNormal
+    updateNormal
   ]
 }
 

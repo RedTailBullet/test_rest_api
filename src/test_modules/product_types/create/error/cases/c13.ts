@@ -1,4 +1,4 @@
-import { TestCase } from '../../../../../models'
+import { TestCase } from '../../../../../test_runners/models'
 
 const c: TestCase = {
   description: '13. Create product type with wrong value for enum in type in attribute definition draft',

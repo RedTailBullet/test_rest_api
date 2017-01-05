@@ -1,4 +1,4 @@
-import { TestCase, HttpResult } from '../../../../../models'
+import { TestCase, HttpResult } from '../../../../../test_runners/models'
 
 let testData = {
   "name": {

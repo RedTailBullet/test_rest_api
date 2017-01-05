@@ -1,4 +1,4 @@
-import { TestCase } from '../../../../../models'
+import { TestCase } from '../../../../../test_runners/models'
 
 const c: TestCase = {
   description: '1. Create tax categories without subRate',

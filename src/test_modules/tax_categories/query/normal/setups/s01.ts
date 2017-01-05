@@ -1,4 +1,4 @@
-import { CaseSetup } from '../../../../../models'
+import { CaseSetup } from '../../../../../test_runners/models'
 
 const s: CaseSetup = {
   description: '1. Create tax categories without subRate for query normal test',

@@ -1,4 +1,4 @@
-import { TestCase, HttpResult, CaseSetup } from '../../../../../models'
+import { TestCase, HttpResult, CaseSetup } from '../../../../../test_runners/models'
 import * as config from '../../../../../config'
 import s1 from '../setups/s1'
 

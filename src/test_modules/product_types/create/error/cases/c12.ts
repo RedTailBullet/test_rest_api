@@ -1,4 +1,4 @@
-import { TestCase } from '../../../../../models'
+import { TestCase } from '../../../../../test_runners/models'
 
 const c: TestCase = {
   description: '12. Create product type with no \'values\' for enum in type while \'isRequired\' of this attribute definition draft is true',

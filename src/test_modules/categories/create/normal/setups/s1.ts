@@ -1,5 +1,5 @@
 
-import { TestBase } from '../../../../../models'
+import { TestBase } from '../../../../../test_runners/models'
 let s: TestBase = {
   description: 'Setup 1: Create category name smartphone with all required properties for function test',
   requestData: {

@@ -1,4 +1,4 @@
-import { TestBase } from '../../../../../models'
+import { TestBase } from '../../../../../test_runners/models'
 
 let s: TestBase = {
   description: 'Setup 2-1: Create category name \'smartphone\' for delete',

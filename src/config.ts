@@ -1,4 +1,4 @@
-import * as configModel from './models/config'
+import * as configModel from './test_runners/models/config'
 
 export const USING_CONFIG = 'LocalConfig'
 

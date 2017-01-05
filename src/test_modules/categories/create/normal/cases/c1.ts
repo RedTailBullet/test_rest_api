@@ -1,4 +1,4 @@
-import { TestCase } from '../../../../../models'
+import { TestCase } from '../../../../../test_runners/models'
 let testData = {
 	'name': {
 		'de': 'de-smartphone_with_all_required_properties',

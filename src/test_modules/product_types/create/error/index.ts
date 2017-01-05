@@ -1,4 +1,4 @@
-import { TestCase, TestSuite } from '../../../../models'
+import { TestCase, TestSuite } from '../../../../test_runners/models'
 
 import testCases from './cases'
 

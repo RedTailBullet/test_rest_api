@@ -1,4 +1,4 @@
-import { CaseSetup, HttpResult } from '../../../../../models'
+import { CaseSetup, HttpResult } from '../../../../../test_runners/models'
 
 import s01 from './s01'
 

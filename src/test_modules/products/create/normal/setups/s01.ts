@@ -1,4 +1,4 @@
-import { CaseSetup } from '../../../../../models'
+import { CaseSetup } from '../../../../../test_runners/models'
 
 const s: CaseSetup = {
   description: 'Create product type for normal test of product creation',

@@ -1,4 +1,4 @@
-import { CaseSetup } from '../../../../../models'
+import { CaseSetup } from '../../../../../test_runners/models'
 
 let s: CaseSetup = {
   description: 'Setup 1: Create the 1st product type for delete normal test',
