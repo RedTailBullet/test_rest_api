@@ -10,12 +10,6 @@ Payload:
   "description": "The future is Asia", 
   "locations": [
     {
-      "country": "KR"
-    },
-    {
-      "country": "CN"
-    },
-    {
       "country": "CN",
       "state": "Beijing"
     },
@@ -24,8 +18,14 @@ Payload:
       "state": "Guangdong"
     },
     {
+      "country": "KR"
+    },
+    {
       "country": "JP",
       "state": "Tokyo"
+    },
+    {
+      "country": "CN"
     }
   ]
 }
