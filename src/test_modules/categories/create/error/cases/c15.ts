@@ -12,7 +12,7 @@ let testData = {
 }
 
 const c: TestCase = {
-  description: '15. Create category with parent and no teyeId',
+  description: '15. Create category with parent and no typeId',
   requestData: {
     method: 'post',
     payload: {

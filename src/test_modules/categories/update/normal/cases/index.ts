@@ -12,15 +12,15 @@ import c08 from './c08'
 import c09 from './c09'
 
 const cases: TestCase[] = [
-  // c01,
+  c01,
   c02,
-  // c03,
+  c03,
   // c04,
-  // c05,
-  // c06,
-  // c07,
-  // c08,
-  // c09
+  c05,
+  c06,
+  c07,
+  c08,
+  c09
 ]
 
 export default cases

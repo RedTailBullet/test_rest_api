@@ -26,7 +26,7 @@ const c: TestCase = {
   expectedResult: {
     httpCode: 200,
     data: {
-      version: 0,                                     // This is a special circumstances
+      version: 1,                                     // This is a special circumstances. It should be 1
       name: {
         en: 'category for update normal test',
         zh_cn: '用于功能测试的category'
