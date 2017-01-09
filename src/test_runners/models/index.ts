@@ -22,6 +22,7 @@ export interface HttpResult {
   // the default output is 'Should return correct http code and data'
   description?: string
   data?: EntityProps
+
 }
 
 export interface TestBase {
@@ -43,6 +44,7 @@ export class Cleanup implements TestBase {
     this.requestData = requestData
   }
 }
+
 
 /**
  * A test case may have setups and cleanups. 

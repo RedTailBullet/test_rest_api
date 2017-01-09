@@ -14,7 +14,7 @@ const c: TestCase = {
   setups: s,
   requestData: {
     payload: {
-      'version': 1,
+      'version': 0,
       'actions': [
         {
           'action': 'addAttributeDefinition',
@@ -37,10 +37,10 @@ const c: TestCase = {
     httpCode: 200,
     data: {
       'id': '80bb9d00-4f16-442a-b468-d53605d0934e',
-      'version': 2,
+      'version': 1,
       'name': 'normal test product type for update',
       'description': 'normal test product type for update',
-      'classifier': 'Complex',
+      // 'classifier': 'Complex',
       'attributes': [
         {
           'name': 'normal-test-attribute-definition-text',
@@ -54,7 +54,7 @@ const c: TestCase = {
           'attributeConstraint': 'None',
           'isSearchable': true,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'normal-test-attribute-definition-enum',
@@ -82,7 +82,7 @@ const c: TestCase = {
           'attributeConstraint': 'None',
           'isSearchable': true,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'name': 'normal-test-attribute-definition-lenum',
@@ -110,7 +110,7 @@ const c: TestCase = {
           'attributeConstraint': 'None',
           'isSearchable': true,
           'inputHint': 'SingleLine',
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         },
         {
           'type': {
@@ -122,7 +122,7 @@ const c: TestCase = {
           'attributeConstraint': 'None',
           'inputHint': 'SingleLine',
           'isSearchable': true,
-          'displayGroup': 'Other'
+          // 'displayGroup': 'Other'
         }
       ],
       'key': 'normal-test-product-type-for-update',

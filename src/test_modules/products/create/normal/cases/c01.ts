@@ -15,8 +15,8 @@ const c: TestCase = {
         zh: '常规测试：创建产品'
       },
       productType: {
-        id: 'product-types',
-        typeId: ''
+        id: '',
+        typeId: 'product-types'
       },
       slug: {
         en: 'normal-test-created-product-slug'
@@ -47,17 +47,15 @@ const c: TestCase = {
           {
             value: 100,
             country: 'us',
-            customerGroup: {
-              id: 'customer-groups',
-              typeId: ''
-            },
-
+            validFrom: '2001-09-11T14:00:00.000Z',
+            validUntil: '20020-09-11T14:00:00.000Z'
           }
-        ]
+        ],
+        
       }
     }
   },
   expectedResult: {
-    httpCode: 201
+    httpCode: 200
   }
 }

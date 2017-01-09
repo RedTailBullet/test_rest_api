@@ -16,6 +16,6 @@ export const LocalConfig: configModel.config = {
 }
 
 export const LocalConfig2: configModel.config = {
-  BASEURL: 'http://192.168.8.151:8088',
+  BASEURL: 'http://192.168.8.103:8088',
   NEED_ACCESS_TOKEN: false
 }

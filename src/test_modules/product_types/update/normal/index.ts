@@ -6,7 +6,7 @@ let testSuite: TestSuite = {
   description: 'Normal test for product types update',
   testCases: testCases,
   setupMethod: 'post',
-  testCaseMethod: 'post'
+  testCaseMethod: 'put'
 }
 
 export default testSuite

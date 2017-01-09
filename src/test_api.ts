@@ -9,13 +9,13 @@ import runModule from './test_runners/run_module'
 import compare from './test_runners/utilities/compare_object'
 
 /***************import test modules below *******************/
-// import categories from './test_modules/categories'
-import productType from './test_modules/product_types'
-import inventory from './test_modules/inventory'
-import taxCategories from './test_modules/tax_categories'
+import categories from './test_modules/categories'
+// import productType from './test_modules/product_types'
+// import inventory from './test_modules/inventory'
+// import taxCategories from './test_modules/tax_categories'
 let modules: ModuleSuites[] = [
-    productType
-    // categories,
+    // productType
+    categories,
     // inventory
     // taxCategories
 ]

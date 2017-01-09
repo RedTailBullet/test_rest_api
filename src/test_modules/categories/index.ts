@@ -5,10 +5,13 @@ import deleteNormal from './delete/normal'
 import deleteError from './delete/error'
 import queryNormal from './query/normal'
 import queryError from './query/error'
+import updateNormal from './update/normal'
 
 const ms: ModuleSuites = {
   apiName: 'categories',
-  suites: [deleteNormal]
+  suites: [
+    updateNormal
+  ]
 }
 
 export default ms

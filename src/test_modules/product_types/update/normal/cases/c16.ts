@@ -4,7 +4,7 @@ import s01 from '../setups/s01'
 const s: CaseSetup[] = [s01]
 
 const c: TestCase = {
-  description: '5. Update product type remove attribute definition',
+  description: '16. Update product type set key and name',
   config: function (this: TestCase) {
     let result = s01.result as HttpResult
     if (result.data) {
@@ -17,8 +17,12 @@ const c: TestCase = {
       'version': 0,
       'actions': [
         {
-          'action': 'removeAttributeDefinition',
-          'name': 'normal-test-attribute-definition-text'
+          'action': 'setKey',
+          'key': 'normal-test-product-type-updated'
+        },
+        {
+          action: 'setName',
+          name: 'normal test product type updated'
         }
       ]
     }
@@ -28,10 +32,24 @@ const c: TestCase = {
     data: {
       'id': '80bb9d00-4f16-442a-b468-d53605d0934e',
       'version': 1,
-      'name': 'normal test product type for update',
+      'name': 'normal test product type updated',
       'description': 'normal test product type for update',
       // 'classifier': 'Complex',
       'attributes': [
+        {
+          'name': 'normal-test-attribute-definition-text',
+          'label': {
+            'en': 'normal test attribute definition text'
+          },
+          'isRequired': true,
+          'type': {
+            'name': 'text'
+          },
+          'attributeConstraint': 'None',
+          'isSearchable': true,
+          'inputHint': 'SingleLine',
+          // 'displayGroup': 'Other'
+        },
         {
           'name': 'normal-test-attribute-definition-enum',
           'label': {
@@ -89,7 +107,7 @@ const c: TestCase = {
           // 'displayGroup': 'Other'
         }
       ],
-      'key': 'normal-test-product-type-for-update',
+      'key': 'normal-test-product-type-updated',
       'createdAt': '2016-12-26T01:53:48.309Z',
       'lastModifiedAt': '2016-12-26T01:53:48.309Z'
     }

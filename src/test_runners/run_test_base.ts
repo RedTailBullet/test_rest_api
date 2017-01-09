@@ -9,7 +9,14 @@ export default async function (testBase: TestBase, setups?: CaseSetup[]) {
   }
 
   let resp = await callApi(testBase.requestData)
-  let tb = testBase // avoid IDE bug 
+  let tb = testBase // avoid IDE bug
+  if (testBase['exceptedResults']) {
+    if (resp.status !== testBase['exceptedResults'].httpCode) {
+      logError(resp)
+    }
+  } else if (resp.status !== 200 && !(tb instanceof Cleanup)) {
+    logError(resp)
+  }
   if (!(tb instanceof Cleanup)) {
     let responseData: any = resp.data
     let result: HttpResult = {
@@ -18,4 +25,10 @@ export default async function (testBase: TestBase, setups?: CaseSetup[]) {
     }
     testBase.result = result
   }
+}
+
+function logError(resp) {
+  console.log(`status: ${resp.data.status}`)
+  console.log(`message: ${resp.data.message}`)
+  console.log('--------------------------')
 }

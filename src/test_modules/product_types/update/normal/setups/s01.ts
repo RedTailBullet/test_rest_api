@@ -16,7 +16,10 @@ let s: CaseSetup = {
           'label': {
             'en': 'normal test attribute definition text'
           },
-          'isRequired': true
+          'isRequired': true,
+          isSearchable: true,
+          inputHint: 'SingleLine',
+          attributeConstraint: 'None'
         },
         {
           'type': {
@@ -40,7 +43,10 @@ let s: CaseSetup = {
           'label': {
             'en': 'normal test attribute definition enum'
           },
-          'isRequired': false
+          'isRequired': false,
+          isSearchable: true,
+          inputHint: 'SingleLine',
+          attributeConstraint: 'None'
         },
         {
           'type': {
@@ -64,7 +70,10 @@ let s: CaseSetup = {
           'label': {
             'en': 'normal test attribute definition lenum'
           },
-          'isRequired': true
+          'isRequired': true,
+          isSearchable: true,
+          inputHint: 'SingleLine',
+          attributeConstraint: 'None'
         }
       ]
     }
