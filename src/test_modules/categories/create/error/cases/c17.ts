@@ -21,7 +21,7 @@ const c: TestCase = {
     }
   },
   expectedResult: {
-    httpCode: 200
+    httpCode: 404
   }
 }
 

@@ -1,8 +1,9 @@
 import { TestCase, HttpResult } from '../../../../../test_runners/models'
 import s3 from '../setups/s03'
+import s2 from '../setups/s02'
 import s1 from '../setups/s01'
 
-const setups = [s1, s3]
+const setups = [s1, s2, s3]
 
 const c: TestCase = {
   description: '6. Change parent with wrong type id',

@@ -9,8 +9,8 @@ export interface RequestData {
 }
 
 export interface EntityProps {
-  'id': string,
-  'version': number,
+  'id'?: string,
+  'version'?: number,
   [prop: string]: any
 }
 

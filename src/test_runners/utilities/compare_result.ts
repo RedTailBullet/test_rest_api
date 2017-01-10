@@ -13,7 +13,7 @@ function compareResult(testCase: TestCase) {
     throw new chai.AssertionError(`Error while running ${testCase.description}\n
       expected status: ${expectedResult.httpCode}\n
       actual status: ${result.httpCode}\n
-      message: ${JSON.stringify(resultData)}`)
+      returned data: \n${JSON.stringify(resultData, null, 2)}`)
   }
 
   let expectedData = expectedResult.data

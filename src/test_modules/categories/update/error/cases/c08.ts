@@ -1,11 +1,12 @@
 import { TestCase, HttpResult } from '../../../../../test_runners/models'
 import s3 from '../setups/s03'
+import s2 from '../setups/s02'
 import s1 from '../setups/s01'
 
-const setups = [s1, s3]
+const setups = [s1, s2, s3]
 
 const c: TestCase = {
-  description: '7. Change parent no id',
+  description: '8. Change parent no id',
   setups,
   config: function (this: TestCase) {
     let result = s3.result as HttpResult

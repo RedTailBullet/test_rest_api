@@ -18,7 +18,7 @@ const c: TestCase = {
       this.requestData.payload.actions[0].parent.id = resultID
       if (this.expectedResult.data) {
         this.expectedResult.data['parent'].id = resultID
-        this.expectedResult.data['ancestor'][0].id = resultID
+        this.expectedResult.data['ancestors'][0].id = resultID
       }
     }
   },
@@ -64,7 +64,7 @@ const c: TestCase = {
         typeId: 'category',
         id: ''
       },
-      ancestor: [
+      ancestors: [
         {
           typeId: 'category',
           id: ''

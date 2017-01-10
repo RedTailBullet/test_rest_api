@@ -13,11 +13,14 @@ import categories from './test_modules/categories'
 import productType from './test_modules/product_types'
 import inventory from './test_modules/inventory'
 import taxCategories from './test_modules/tax_categories'
+import international from './test_modules/international'
+
 let modules: ModuleSuites[] = [
-    // productType
-    categories
-    // inventory
-    // taxCategories
+    // productType,
+    // categories,
+    // inventory,
+    // taxCategories,
+    international
 ]
 /***************import test modules above *******************/
 

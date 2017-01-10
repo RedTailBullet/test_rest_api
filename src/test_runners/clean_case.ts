@@ -47,8 +47,10 @@ function setRequest(testBase: TestBase) {
 
     let setupUrl = `${config.getBasicUrl()}/${testBase.requestData.apiName}`
     requestData.url = `${setupUrl}/${result.data.id}`
-    requestData.params = {
-      version: result.data.version
+    if (result.data.version) {
+      requestData.params = {
+        version: result.data.version
+      }
     }
   }
   return requestData
