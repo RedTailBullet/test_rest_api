@@ -19,8 +19,7 @@ const c: TestCase = {
       actions: [
         {
           action: 'setDescription',
-          description: {
-          }
+          description: {}
         }
       ]
     }

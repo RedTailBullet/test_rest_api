@@ -14,8 +14,8 @@ import productType from './test_modules/product_types'
 import inventory from './test_modules/inventory'
 import taxCategories from './test_modules/tax_categories'
 let modules: ModuleSuites[] = [
-    productType
-    // categories,
+    // productType
+    categories
     // inventory
     // taxCategories
 ]

@@ -26,7 +26,7 @@ const c: TestCase = {
             },
             name: 'label-too-long',
             label: {
-              en:  'whdKG1PGIpT5XlhXr03nvc0XmQ2WDstLgSapxTbph1Bq97bYdBQLC7ZBKmGqUdF2IQzKP7Wob8U7z4UoJBzy3QPl63EXO9zN3NjfSrHzBWTYDUEMDkBUgmfEIhDjsUFnLXvOWQHjnEThcaXl2N7hcmqpBdMovCaht1sMBp6hBLXgCmvszSVb537K7k5pS6vJJKFB4cma5XOVNn2BKXqtPxGxSpdeC4CTtOl3wFMBgXFQaDncgIDaH5e7JMIBDomOs'
+              en:  'w99g93760qEMnb9gCL6wiYNhNxxxX7oDltmPQJPjG1Pacv5NSS49xQw024qtlsAVGujIwHfTx61smygmKP51PCknDDejinB1MJBCwMEmQ5ouSn4ozUPHqh6SrJgUfFInfJI7HGYacKsAVR1BPEw26JfLqNHwXiBzq2qe7988fnBxt3GLvFbgrr2Si3OdzegTP5alDXMBx6V8jxJI94uHstaGJmBOsEpGWvP14OcmhI4JEYJ2zOcdWe5PbWDiZaabq2A8'
             },
             isRequired: false,
             attributeConstraint: 'None',

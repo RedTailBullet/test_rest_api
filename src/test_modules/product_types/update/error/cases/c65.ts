@@ -5,7 +5,7 @@ import s2 from '../setups/s02'
 const setups = [s2]
 
 const c: TestCase = {
-  description: '64. Update product type with no version',
+  description: '65. Update product type with no version',
   setups,
   config: function (this: TestCase) {
     const result = s2.result as HttpResult

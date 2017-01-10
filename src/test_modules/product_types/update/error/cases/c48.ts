@@ -20,7 +20,7 @@ const c: TestCase = {
       actions: [
         {
           action: 'setLocalizedEnumValueOrder',
-          attributeName: 'number-attribute-for-update-error-test',
+          attributeName: 'lenum-attribute-for-update-error-test',
           values: [
             {
               // key: 'lenumKey2',

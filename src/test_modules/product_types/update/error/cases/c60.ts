@@ -21,7 +21,7 @@ const c: TestCase = {
         {
           action: 'setIsSearchable',
           attributeName: 'number-attribute-for-update-error-test',
-          isSearchable: 'true'
+          isSearchable: 123
         }
       ]
     }

@@ -11,14 +11,14 @@ import updateError from './update/error'
 const ms: ModuleSuites = {
   apiName: 'categories',
   suites: [
-    // createNormal,
-    // createError,
-    // deleteNormal,
-    // deleteError,
+    createNormal,
+    createError,
+    deleteNormal,
+    deleteError,
     updateNormal,
     updateError,
-    // queryNormal,
-    // queryError
+    queryNormal,
+    queryError
   ]
 }
 

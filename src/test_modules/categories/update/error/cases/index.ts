@@ -12,7 +12,6 @@ import c08 from './c08'
 import c09 from './c09'
 import c10 from './c10'
 import c11 from './c11'
-import c12 from './c12'
 
 const cases: TestCase[] = [
   c01,
@@ -20,13 +19,12 @@ const cases: TestCase[] = [
   c03,
   c04,
   c05,
-  // c06,
-  // c07,
-  // c08,
+  c06,
+  c07,
+  c08,
   c09,
   c10,
   c11,
-  c12
 ]
 
 export default cases
