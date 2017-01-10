@@ -1,14 +1,14 @@
 import { TestCase, HttpResult } from '../../../../../test_runners/models'
 
-import s3 from '../setups/s03'
+import s2 from '../setups/s02'
 
-const setups = [s3]
+const setups = [s2]
 
 const c: TestCase = {
-  description: '35. Add plain enum with no key in value',
+  description: '62. Update product type with version higher',
   setups,
   config: function (this: TestCase) {
-    const result = s3.result as HttpResult
+    const result = s2.result as HttpResult
     const data = result.data
     if (data) {
       this.requestData.url += `/${data.id}`
@@ -16,14 +16,12 @@ const c: TestCase = {
   },
   requestData: {
     payload: {
-      version: 0,
+      version: 1,
       actions: [
         {
-          action: 'addPlainEnumValue',
-          attributeName: 'enum-attribute-for-update-error-test',
-          value: {
-            label: 'labelAdded'
-          }
+          action: 'setIsSearchable',
+          attributeName: 'number-attribute-for-update-error-test',
+          isSearchable: true
         }
       ]
     }

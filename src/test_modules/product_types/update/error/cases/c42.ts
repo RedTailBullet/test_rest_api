@@ -1,14 +1,14 @@
 import { TestCase, HttpResult } from '../../../../../test_runners/models'
 
-import s3 from '../setups/s03'
+import s4 from '../setups/s04'
 
-const setups = [s3]
+const setups = [s4]
 
 const c: TestCase = {
-  description: '38. Add localized enum to wrong type of attribute',
+  description: '42. Add localized enum with value of plain enum value',
   setups,
   config: function (this: TestCase) {
-    const result = s3.result as HttpResult
+    const result = s4.result as HttpResult
     const data = result.data
     if (data) {
       this.requestData.url += `/${data.id}`
@@ -20,12 +20,10 @@ const c: TestCase = {
       actions: [
         {
           action: 'addLocalizedEnumValue',
-          attributeName: 'enum-attribute-for-update-error-test',
+          attributeName: 'lenum-attribute-for-update-error-test',
           value: {
             key: 'keyAdded',
-            label: {
-              en: 'labelAdded'
-            }
+            label: 'labelAdded'
           }
         }
       ]

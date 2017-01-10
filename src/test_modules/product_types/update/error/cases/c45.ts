@@ -5,7 +5,7 @@ import s3 from '../setups/s03'
 const setups = [s3]
 
 const c: TestCase = {
-  description: '38. Add localized enum to wrong type of attribute',
+  description: '45. Change the order of enum values with lacking enum value',
   setups,
   config: function (this: TestCase) {
     const result = s3.result as HttpResult
@@ -19,14 +19,22 @@ const c: TestCase = {
       version: 0,
       actions: [
         {
-          action: 'addLocalizedEnumValue',
+          action: 'setPlainEnumValueOrder',
           attributeName: 'enum-attribute-for-update-error-test',
-          value: {
-            key: 'keyAdded',
-            label: {
-              en: 'labelAdded'
+          values: [
+            {
+              key: 'enumKey1',
+              label: 'enumLabel1'
+            },
+            // {
+            //   key: 'enumKey2',
+            //   label: 'enumLabel2'
+            // },
+            {
+              key: 'enumKey3',
+              label: 'enumLabel3'
             }
-          }
+          ]
         }
       ]
     }

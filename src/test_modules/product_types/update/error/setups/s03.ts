@@ -26,9 +26,9 @@ const s: CaseSetup = {
               }
             ]
           },
-          name: 'number-attribute-for-update-error-test',
+          name: 'enum-attribute-for-update-error-test',
           label: {
-            en: 'number attribute for update error test',
+            en: 'enum attribute for update error test',
             zh_cn: '更新错误测试用的enum attribute'
           },
           isRequired: true,

@@ -20,7 +20,7 @@ const c: TestCase = {
       actions: [
         {
           action: 'addPlainEnumValue',
-          attributeName: 'text-attribute-for-update-error-test',
+          attributeName: 'enum-attribute-for-update-error-test',
           value: {
             key: 'keyAdded',
             label: {

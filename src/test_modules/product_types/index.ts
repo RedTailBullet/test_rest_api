@@ -4,6 +4,7 @@ import createNormal from './create/normal'
 import deleteNormal from './delete/normal'
 import deleteError from './delete/error'
 import updateNormal from './update/normal'
+import updateError from './update/error'
 
 const ms: ModuleSuites = {
   apiName: 'product-types',
@@ -12,7 +13,8 @@ const ms: ModuleSuites = {
     // createNormal,
     // deleteNormal,
     // deleteError,
-    updateNormal
+    // updateNormal,
+    updateError
   ]
 }
 

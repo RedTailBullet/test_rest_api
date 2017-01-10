@@ -1,14 +1,15 @@
 import { TestCase, HttpResult } from '../../../../../test_runners/models'
 
-import s3 from '../setups/s03'
+import s2 from '../setups/s02'
+import s6 from '../setups/s06'
 
-const setups = [s3]
+const setups = [s2, s6]
 
 const c: TestCase = {
-  description: '38. Add localized enum to wrong type of attribute',
+  description: '64. Update product type with version lower',
   setups,
   config: function (this: TestCase) {
-    const result = s3.result as HttpResult
+    const result = s2.result as HttpResult
     const data = result.data
     if (data) {
       this.requestData.url += `/${data.id}`
@@ -19,14 +20,9 @@ const c: TestCase = {
       version: 0,
       actions: [
         {
-          action: 'addLocalizedEnumValue',
-          attributeName: 'enum-attribute-for-update-error-test',
-          value: {
-            key: 'keyAdded',
-            label: {
-              en: 'labelAdded'
-            }
-          }
+          action: 'setIsSearchable',
+          attributeName: 'number-attribute-for-update-error-test',
+          isSearchable: true
         }
       ]
     }

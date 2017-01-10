@@ -20,7 +20,7 @@ const c: TestCase = {
       actions: [
         {
           action: 'addLocalizedEnumValue',
-          attributeName: 'text-attribute-for-update-error-test'
+          attributeName: 'lenum-attribute-for-update-error-test'
         }
       ]
     }

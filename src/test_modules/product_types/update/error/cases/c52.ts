@@ -5,7 +5,7 @@ import s3 from '../setups/s03'
 const setups = [s3]
 
 const c: TestCase = {
-  description: '38. Add localized enum to wrong type of attribute',
+  description: '52. Change the label of an enum value with the same label as before',
   setups,
   config: function (this: TestCase) {
     const result = s3.result as HttpResult
@@ -19,13 +19,11 @@ const c: TestCase = {
       version: 0,
       actions: [
         {
-          action: 'addLocalizedEnumValue',
+          action: 'setPlainEnumValueLabel',
           attributeName: 'enum-attribute-for-update-error-test',
-          value: {
-            key: 'keyAdded',
-            label: {
-              en: 'labelAdded'
-            }
+          newValue: {
+            key: 'enumKey1',
+            label: 'enumLabel1'
           }
         }
       ]
