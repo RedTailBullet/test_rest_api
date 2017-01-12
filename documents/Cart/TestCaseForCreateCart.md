@@ -34,7 +34,100 @@ setups:
 }
 ```  
 
-4. Create a product with all properties.
+4. Create a customer.  
+
+```json
+{
+  "email": "email12345@qq.com",
+  "password": "password12345",
+  "firstName": "firstName",
+  "lastName": "lastName",
+  "customerGroup": {
+    "typeId": "customer-group",
+    "id": "id of customer-group"
+  }
+}
+```  
+
+5. Create zone name 'US Mainland'.  
+
+```json
+{
+  "name": "US Mainland-test",
+  "description": "US Mainland",
+  "locations": [
+    { 
+      "country": "US",
+      "state": "Hawaii"
+    }
+  ]
+}
+```
+
+6. Create tax category.
+
+```json
+{
+  "name": "Standard tax category test",
+  "description": "Standard tax category test",
+  "rates": [
+    {
+      "name": "13.7% US",
+      "amount": 0.137,
+      "includedInPrice": false,
+      "country": "US",
+      "state": "Hawaii",
+      "rate": [
+        {
+          "name": "salesTaxRate",
+          "amount": "0.087"
+        },
+        {
+           "name": "otherTaxRate",
+           "amount": "0.05"
+        }
+      ]
+    }
+  ]
+}
+```
+
+7. Create shipping method.
+
+```json
+{
+  "name": "CN-SF",
+  "taxCategory": {
+    "typeId": "tax-category",
+    "id": "Standard tax category test"
+  },
+  "isDefault": false,
+  "zoneRates": [
+    {
+      "zone": {
+        "typeId": "zone",
+        "id": "US-Mainland"
+      },
+      "shippingRates": [
+        {
+          "price": {
+            "currencyCode": "EUR",
+            "centAmount": 2000
+          }
+        },
+        {
+          "price": {
+            "currencyCode": "USD",
+            "centAmount": 2400
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+8. Create a product with all properties.
 
 ```json
 {
@@ -45,7 +138,7 @@ setups:
   },
   "productType": {
     "id": "",
-    "typeId": "product-types"
+    "typeId": "product-type"
   },
   "slug": {
     "en": "normal-test-created-product-slug"
@@ -114,98 +207,6 @@ setups:
 }
 ```
 
-5. Create a customer.  
-
-```json
-{
-  "email": "email12345@qq.com",
-  "password": "password12345",
-  "firstName": "firstName",
-  "lastName": "lastName",
-  "customerGroup": {
-    "typeId": "customer-group",
-    "id": ""
-  }
-}
-```  
-
-6. Create zone name 'US Mainland'.  
-
-```json
-{
-  "name": "US Mainland Hawaii",
-  "description": "US Mainland Hawaii",
-  "locations": [
-    { 
-      "country": "US",
-      "state": "Hawaii"
-    }
-  ]
-}
-```
-
-7. Create tax category.
-
-```json
-{
-  "name": "Standard tax category test",
-  "description": "Standard tax category test",
-  "rates": [
-    {
-      "name": "13.7% US Mainland",
-      "amount": 0.137,
-      "includedInPrice": false,
-      "country": "US",
-      "state": "Hawaii",
-      "rate": [
-        {
-          "name": "salesTaxRate",
-          "amount": "0.087"
-        },
-        {
-           "name": "otherTaxRate",
-           "amount": "0.05"
-        }
-      ]
-    }
-  ]
-}
-```
-
-8. Create shipping method.
-
-```json
-{
-  "name": "CN-SF",
-  "taxCategory": {
-    "typeId": "tax-category",
-    "id": "Standard tax category test"
-  },
-  "isDefault": false,
-  "zoneRates": [
-    {
-      "zone": {
-        "typeId": "zone",
-        "id": "US-Mainland"
-      },
-      "shippingRates": [
-        {
-          "price": {
-            "currencyCode": "EUR",
-            "centAmount": 2000
-          }
-        },
-        {
-          "price": {
-            "currencyCode": "USD",
-            "centAmount": 2400
-          }
-        }
-      ]
-    }
-  ]
-}
-```
 
 case payload:  
 
@@ -213,20 +214,15 @@ case payload:
 {
   "currency": "USD",
   "customerId": "id of customer",
-  "anonymousId": "id of anonymous",
+  "anonymousId": "id of anonymous session",
   "country": "US",
   "inventoryMode": "TrackOnly",
   "taxMode": "Platform",
   "lineItems": [
     {
-      "productId": "product test 1",
+      "productId": "id of product",
       "variantId": 1,
       "quantity": 1
-    },
-    {
-      "productId": "product test 1",
-      "variantId": 2,
-      "quantityId": 1
     }
   ],
   "shippingAddress": {

@@ -12,7 +12,6 @@ const s: CaseSetup = {
       let temp0 = setups[0].result
       if(temp0 && temp0.data){
         this.requestData.payload.productType.id = temp0.data.id
-        console.log('productType.id', this.requestData.payload.productType.id)
       }
     }
 
@@ -20,7 +19,6 @@ const s: CaseSetup = {
       let temp1 = setups[1].result
       if(temp1 && temp1.data){
         this.requestData.payload.categories[0].id = temp1.data.id
-        console.log('categories.id', this.requestData.payload.categories[0].id)
       }
     }
 
@@ -28,7 +26,6 @@ const s: CaseSetup = {
       let temp5 = setups[5].result
       if (temp5 && temp5.data) {
         this.requestData.payload.taxCategory.id = temp5.data.id
-        console.log('taxCategory.id', this.requestData.payload.taxCategory.id)
       }
     }
   },

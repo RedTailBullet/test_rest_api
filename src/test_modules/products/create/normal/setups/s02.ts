@@ -5,12 +5,14 @@ const s: CaseSetup = {
   requestData: {
     apiName: 'categories',
     payload: {
-      name: {
-        en: 'category for create product testing'
+      "name": {
+        "en": "category for create product testing"
       },
-      description: 'category for create product testing',
-      slug: {
-        en: 'category-for-create-product-testing'
+      "description": {
+        "en": "category for create product testing"
+      },
+      "slug": {
+        "en": "category-for-create-product-testing"
       }
     }
   }

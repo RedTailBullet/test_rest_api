@@ -13,7 +13,7 @@ let setups = [s01, s02, s03, s04, s05, s06, s07, s08]
 let testData = {
   "currency": "USD",
   "customerId": "id of customer",
-  "anonymousId": "anonymous session",
+  "anonymousId": "id of anonymous session",
   "country": "US",
   "inventoryMode": "TrackOnly",
   "taxMode": "Platform",
@@ -75,7 +75,7 @@ const c: TestCase = {
       "id": "",
       "version": 1,
       "customerId": "",
-      "anonymousId": "anonymous session",
+      "anonymousId": "id of anonymous session",
       "createdAt": "",
       "lastModifiedAt": "",
       "lineItems": [

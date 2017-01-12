@@ -5,8 +5,8 @@ const s: CaseSetup = {
   requestData: {
     apiName: 'product-types',
     payload: {
-      'name': 'function test product type 2',
-      'description': 'function test product type 2'
+      'name': 'function test product type',
+      'description': 'function test product type'
     }
   }
 }
