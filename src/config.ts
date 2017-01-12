@@ -1,6 +1,6 @@
 import * as configModel from './test_runners/models/config'
 
-export const USING_CONFIG = 'LocalConfig2'
+export const USING_CONFIG = 'LocalConfig'
 
 export const CTPConfig: configModel.config = {
   BASEURL: `https://api.sphere.io`,

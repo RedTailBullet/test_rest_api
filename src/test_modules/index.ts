@@ -5,9 +5,9 @@ import taxCategories from './tax_categories'
 import international from './international'
 
 export default [
-  categories,
-  productType,
-  inventory,
-  taxCategories,
+  // categories,
+  // productType,
+  // inventory,
+  // taxCategories,
   international
 ]

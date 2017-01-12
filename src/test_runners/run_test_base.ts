@@ -11,26 +11,13 @@ export default async function (testBase: TestBase, setups?: CaseSetup[]) {
 
   let resp = await callApi(testBase.requestData)
   let tb = testBase // avoid IDE bug
-  // if (testBase['expectedResult']) {
-  //   if (resp.status !== testBase['expectedResult'].httpCode) {
-  //     logError(testBase.description, resp)
-  //   }
-  // } else if (resp.status !== 200 && !(tb instanceof Cleanup)) {
-  //   logError(testBase.description, resp)
-  // }
   if (!(tb instanceof Cleanup)) {
     let responseData: any = resp.data
     let result: HttpResult = {
       data: responseData,
-      httpCode: resp.status
+      httpCode: resp.status,
+      response: resp
     }
     testBase.result = result
   }
-}
-
-function logError(testBaseDescription, resp) {
-  console.log('-----------------------------')
-  console.log(`Error while running ${testBaseDescription}`)
-  console.log(`status: ${resp.status}`)
-  console.log(`message: ${resp.data.message}`)
 }
