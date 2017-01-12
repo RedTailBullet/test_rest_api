@@ -16,10 +16,11 @@ let s: TestBase = {
       "description": "Standard tax category test",
       "rates": [
         {
-          "name": "13.7% US Mainland",
+          "name": "13.7% US",
           "amount": 0.137,
           "includedInPrice": false,
           "country": "US",
+          "state": "Hawaii",
           "rate": [
             {
               "name": "salesTaxRate",
