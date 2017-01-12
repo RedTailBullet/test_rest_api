@@ -69,6 +69,8 @@ function isMatch(a, b) {
       if (a.name === b.name) {
         return true
       }
+    } else if (a[0] === b[0]) {
+      return true
     }
   } else {
     if (a === b) {
