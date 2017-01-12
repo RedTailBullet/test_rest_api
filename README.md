@@ -20,14 +20,14 @@ The basic unit is a test case
 
 ### Test case  
 
-A test case should contains the following properties: 
+A test case should contains the following properties:  
 
 1. description: The description of this test case. This description will be presented in the test report.  
 2. requestData: The request data included url, apiName, body, param and method.
 3. setups: An array of setups for this test case
 4. config: A function which you can use it to setup your test case. The input of this function will be the setup array of this test case.
-5. expectedResult: The expected result from the API. The required result is the http code. If a data is presented, the runner will try to match the data with the body of the response.  
-6. result: This field will be created once the API has response. It contains the http code and the body of the response.  
+5. expectedResult: The expected result from the API. The required result is the http code. If a `data` is presented, the runner will try to match the data with the body of the response.  
+6. result: This field will be created once the API responses. It contains the http code and the body of the response.  
 
 ### Test suite  
 
@@ -68,7 +68,7 @@ Inside Normal or Error or other type of test, there are cases and setups.
 1. The cases folder contains all the test cases and are organized as testCases in the index.ts  
 2. The setups folder contains all the setups for test cases. The setups should be imported individually by test case.  
 
-## About modules  
+## About models  
 
 All the basic modules such as TestCase, TestSuite, CaseSetup, HttpResult are being contained in the index.ts in `src/test_runner/modules`.  
 
