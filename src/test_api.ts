@@ -8,21 +8,7 @@ import reportError from './test_runners/utilities/report_error'
 import runModule from './test_runners/run_module'
 import compare from './test_runners/utilities/compare_object'
 
-/***************import test modules below *******************/
-import categories from './test_modules/categories'
-import productType from './test_modules/product_types'
-import inventory from './test_modules/inventory'
-import taxCategories from './test_modules/tax_categories'
-import international from './test_modules/international'
-
-let modules: ModuleSuites[] = [
-    // productType,
-    // categories,
-    // inventory,
-    // taxCategories,
-    international
-]
-/***************import test modules above *******************/
+import testModules from './test_modules'
 
 before(async function() {
   const usingConfig = config.USING_CONFIG
@@ -35,7 +21,7 @@ before(async function() {
 describe('CTP API Test\n', function() {
     // catch all uncaught errors here
   try {
-      modules.forEach(runModule)
+      testModules.forEach(runModule)
   }
   catch (error) {
       console.log('Uncaught error in API Test, exiting...')
