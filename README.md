@@ -80,13 +80,13 @@ All the configurations for connecting to the server is being storage in `src/con
 
 ## About case running  
 
-According to the design, each cases should run individually.  
+According to the design, each case should run individually.  
 
 Test cases within one suite will run one by one. but the test suites may run in parallel.  
 
 The setups and cleanups for one case will run one by one too.  
 
-Each test case will clean itself up after running. However, this might failed if the server doesn't return the correct id and version.  
+Each test case will clean itself up after running. However, cleanup might failed if the server doesn't return the correct id and version.  
 
 The running order of a test case will be: setup's config -> setup itself -> testCase's config -> testCase itself -> compare results -> cleanup test case -> cleanup setups in contrary order.  
 
@@ -96,12 +96,14 @@ Cleanups will run under any circumstances and ignore the response. Which means i
 
 ## About error reports  
 
-I tried to make the error report look nice but it actually depends of the situations.  
+I tried to make the error report look nice but it actually depends on the situations.  
+
+The regular error reports appears when the actual result doesn't match the expected result. The runner will display the expected http code as well as the actual one, and the body of the actual response.  
 
 ## About suffix  
 
-As some special needs are presented, I added a suffix system. This system uses suffix like `_UnOrdered` to solve some special matching condition. However the conditions it supported is limited now and it is not organized well at this time.  
+As some special needs are presented, I added a suffix system. This system uses suffix like `_UnOrdered` to solve some special matching condition. However the conditions it supports is limited now and it is not organized well at this time.  
 
 ## About test reports  
 
-The test reports are in `test_report/` and are named by time.  
+The test reports are in `test_report/` and are named by time. To review the report please open the `apiTestReport.html` in the browser.  

@@ -15,14 +15,14 @@ function compare(description: string, ExpectedResults, ActualResults) {
   for (let prop of expectedProperties) {
     const msg = `${errorMsg} > ${prop}`
 
-    let results
+    let fields
     try {
-      results = getFields(prop, ExpectedResults, ActualResults)
+      fields = getFields(prop, ExpectedResults, ActualResults)
     } catch (err) {
       throw new chai.AssertionError(`${msg} ${err}`)
     }
-    let expected = results.expected
-    let actual = results.actual
+    let expected = fields.expected
+    let actual = fields.actual
 
     if (typeof expected === 'object') {
       compare(msg, expected, actual)
@@ -94,6 +94,7 @@ function sortActual(expected, actual) {
     }
     if (matchedFlag === 0) {
       throw `Array doesn't match in actual data\n
+        expected\n
         ${JSON.stringify(data)}\n
         to be included in\n
         ${JSON.stringify(actual)}`
