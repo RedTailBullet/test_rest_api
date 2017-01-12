@@ -1,6 +1,7 @@
 import * as axios from 'axios'
 import * as chai from 'chai'
 
+import 
 import { ModuleSuites } from './test_runners/models/module_suites'
 import * as config from './config'
 import getAccessToken from './test_runners/utilities/get_access_token'
@@ -11,7 +12,6 @@ import compare from './test_runners/utilities/compare_object'
 import testModules from './test_modules'
 
 before(async function() {
-  const usingConfig = config.USING_CONFIG
   if (config[usingConfig].NEED_ACCESS_TOKEN) {
     const accessToken = await getAccessToken()
     axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`

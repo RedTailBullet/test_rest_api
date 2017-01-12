@@ -25,19 +25,18 @@ export default async function (testSuite: TestSuite) {
 
 // should set case url, setup url, and their methods
 function setupCaseRequest(testCase: TestCase, testSuite: TestSuite) {
-  if (!testCase.requestData.url) {
-    testCase.requestData.url = testSuite.suiteUrl
-  }
   if (testCase.setups) {
     testCase.setups.forEach(setup => {
-      if (!setup.requestData.url) {
-        setup.requestData.url = testSuite.suiteUrl
-      }
       if (!setup.requestData.method) {
         setup.requestData.method = testSuite.setupMethod
       }
       if (!setup.requestData.apiName) {
         setup.requestData.apiName = testSuite.apiName
+      } else {
+        setup.requestData.url = `${config.getBasicUrl()}/${setup.requestData.apiName}`
+      }
+      if (!setup.requestData.url) {
+        setup.requestData.url = testSuite.suiteUrl
       }
     })
   }
@@ -47,5 +46,10 @@ function setupCaseRequest(testCase: TestCase, testSuite: TestSuite) {
   }
   if (!testCase.requestData.apiName) {
     testCase.requestData.apiName = testSuite.apiName
+  } else {
+    testCase.requestData.url = `${config.getBasicUrl()}/${testCase.requestData.apiName}`
+  }
+  if (!testCase.requestData.url) {
+    testCase.requestData.url = testSuite.suiteUrl
   }
 }

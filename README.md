@@ -18,6 +18,8 @@ The `npm i` order are only needed on the first run.
 
 The basic unit is a test case  
 
+About the guide of test case design, please refers to `documents/TestCaseDesignGuide.md`
+
 ### Test case  
 
 A test case should contains the following properties:  
