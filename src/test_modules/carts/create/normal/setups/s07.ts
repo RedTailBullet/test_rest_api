@@ -2,7 +2,7 @@ import { CaseSetup, TestBase } from '../../../../../test_runners/models'
 import * as config from '../../../../../test_runners/utilities/get_configs'
 
 const s: CaseSetup = {
-  description: "setup 7: Create taxCategory name 'Standard tax category test'",
+  description: "setup 7: Create shipping method",
   config: function (this: TestBase, setups) {
     let defaultUrl = config.getBasicUrl()
     this.requestData.url = `${defaultUrl}/${this.requestData.apiName}`
@@ -36,7 +36,7 @@ const s: CaseSetup = {
         {
           "zone": {
             "typeId": "zone",
-            "id": "US-Mainland"
+            "id": "US"
           },
           "shippingRates": [
             {
