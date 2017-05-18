@@ -8,7 +8,7 @@ import reportError from './test_runners/utilities/report_error'
 import runModule from './test_runners/run_module'
 import compare from './test_runners/utilities/compare_object'
 
-import testModules from './test_modules'
+import testModules from '../test_modules'
 
 before(async function() {
   if (config.getNeedAccessToken()) {
