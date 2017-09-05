@@ -1,6 +1,8 @@
 import * as chai from 'chai'
 import { TestCase, HttpResult } from '../models'
 import compareObject from './compare_object'
+import * as logger from '../../test_result_logger/logger_main'
+
 let expect = chai.expect
 
 function compareResult(testCase: TestCase) {
@@ -10,10 +12,11 @@ function compareResult(testCase: TestCase) {
 
   // expect(result.httpCode).to.equal(expectedResult.httpCode)
   if (result.httpCode !== expectedResult.httpCode) {
-    throw new chai.AssertionError(`Error while running ${testCase.description}\n
-      expected status: ${expectedResult.httpCode}\n
-      actual status: ${result.httpCode}\n
-      returned data: \n${JSON.stringify(resultData, null, 2)}`)
+    logger.submitTestResult
+    // throw new chai.AssertionError(`Error while running ${testCase.description}\n
+    //   expected status: ${expectedResult.httpCode}\n
+    //   actual status: ${result.httpCode}\n
+    //   returned data: \n${JSON.stringify(resultData, null, 2)}`)
   }
 
   let expectedData = expectedResult.data
