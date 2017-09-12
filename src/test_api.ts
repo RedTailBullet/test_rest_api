@@ -7,6 +7,7 @@ import getAccessToken from './test_runners/utilities/get_access_token'
 import reportError from './test_runners/utilities/report_error'
 import runModule from './test_runners/run_module'
 import compare from './test_runners/utilities/compare_object'
+import * as logger from './test_result_logger/logger_main'
 
 import testModules from './test_modules'
 
@@ -27,4 +28,8 @@ describe('CTP API Test\n', function() {
       reportError(error)
       process.exit(-1)
   }
+})
+
+after(function () {
+  console.log(logger.getLogger())
 })

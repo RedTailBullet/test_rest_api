@@ -1,4 +1,4 @@
-export type HttpMethod = 'get' | 'post' | 'delete' | 'put'
+ export type HttpMethod = 'get' | 'post' | 'delete' | 'put'
 
 export interface RequestData {
   /**

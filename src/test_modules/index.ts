@@ -5,6 +5,7 @@ import taxCategories from './tax_categories'
 import international from './international'
 import carts from './carts'
 import products from './products'
+import demo from './demo'
 
 export default [
   // categories,
@@ -12,6 +13,7 @@ export default [
   // inventory,
   // taxCategories,
   // international,
-  carts,
-  // products
+  // carts,
+  products
+  // demo
 ]

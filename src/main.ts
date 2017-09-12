@@ -8,7 +8,7 @@ let mocha: any = new Mocha ({
 
 // To avoid typescript's type check
 let reporterOptions = {
-  reportDir: `../test_report/${date.toLocaleString().replace(/\//g, '-')}`,
+  reportDir: `../test_report/`,
   reportName: 'apiTestReport'
 }
 

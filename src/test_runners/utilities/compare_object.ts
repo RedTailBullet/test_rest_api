@@ -1,38 +1,50 @@
 import * as chai from 'chai'
+
+import * as logger from '../../test_result_logger/logger_main'
+
 let expect = chai.expect
 
 const IGNORED = ['id', 'createdAt', 'lastModifiedAt', 'orderHint']
 
-function compare(description: string, ExpectedResults, ActualResults) {
-  let errorMsg = description
+function compare(formerLocation: string, ExpectedResults, ActualResults) {
 
   if (ActualResults === undefined) {
-    throw new chai.AssertionError(`${description} is undefined`)
+    // throw new chai.AssertionError(`${description} is undefined`)
+    logger.submitError (formerLocation, ActualResults, ExpectedResults)
   }
 
   // compare properties
   let expectedProperties = Object.keys(ExpectedResults)
   for (let prop of expectedProperties) {
-    const msg = `${errorMsg} > ${prop}`
+    const currentLocation = `${formerLocation} > ${prop}`
 
     let fields
     try {
       fields = getFields(prop, ExpectedResults, ActualResults)
     } catch (err) {
-      throw new chai.AssertionError(`${msg} ${err}`)
+      // throw new chai.AssertionError(`${msg} ${err}`)
+      logger.submitCustomizedError (currentLocation, err)
     }
     let expected = fields.expected
     let actual = fields.actual
 
     if (typeof expected === 'object') {
-      compare(msg, expected, actual)
+      compare(currentLocation, expected, actual)
     } else if (IGNORED.indexOf(prop) !== -1) {
-      expect(actual, msg).to.not.be.undefined
+
+      // expect(actual, msg).to.not.be.undefined
+      if (actual === undefined) {
+        logger.submitError (currentLocation, actual, expected)
+      }
       continue
     } else if (actual === undefined) {
-      throw new chai.AssertionError(`${msg} is undefined in actual data`)
+      // throw new chai.AssertionError(`${msg} is undefined in actual data`)
+      logger.submitError (currentLocation, actual, expected)
     } else {
-      expect(actual, msg).to.equal(expected)
+      // expect(actual, msg).to.equal(expected)
+      if (actual !== expected) {
+        logger.submitError (currentLocation, actual, expected)
+      }
     }
   }
 }

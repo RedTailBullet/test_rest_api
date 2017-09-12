@@ -8,6 +8,7 @@ import compareResult from './utilities/compare_result'
 
 export default async function (testCase: TestCase) {
   describe(testCase.description, function () {
+
     if (testCase.setups) {
       before(`Setup for ${testCase.description}`, async function () {
         await runSetups(testCase)
